@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './App.scss'
 import { fetchProjects } from '../../ApiCalls'
+import Generator from '../Generator/Generator'
 
 class App extends Component {
 
@@ -14,7 +15,7 @@ async componentDidMount () {
     return (
       <div className='App'>
         <h1>The Palette Picker</h1>
-        {/* <button onClick={console.log(fetchProjects())}>Test Button</button> */}
+        <Generator />
       </div>
     )
   }
