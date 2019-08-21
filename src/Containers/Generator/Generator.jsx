@@ -5,24 +5,37 @@ import RandomColor from 'randomcolor';
 
 class Generator extends Component {
   constructor () {
-    super () 
+    super ();
+    this.state = {
+      randomColors: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']
+    }
   }
 
   getRandomColor = () => {
-    const randomColors = []
     for(var i = 0; i < 5; i++) {
-      randomColors.push(RandomColor())
+      this.setState({randomColors: [...this.state.randomColors, RandomColor()]})
     }
 
-    console.log(randomColors);
+    console.log(this.state.randomColors);
   }
 
+  clearRandomColor = () => {
+    this.setState.randomColors = []
+  }
+
+
   render () {
+   const displayRandomColors = this.state.randomColors.map(color => {
+      return <Color hexCode={color}/>
+    })
+  
     return (
       <div className='generator'>
         <h2>Palette Generator Goes here</h2>
-        <Color />
-        <button onClick={this.getRandomColor}>Generate New Palette</button>
+        <button onClick={() => {this.clearRandomColor() 
+          this.getRandomColor()}}>Generate New Palette</button>
+        {displayRandomColors}
+        {/* {this.state.randomColors.length > 0 && <Color hexCode={this.state.randomColor[0]}/>} */}
       </div>
     )
   }

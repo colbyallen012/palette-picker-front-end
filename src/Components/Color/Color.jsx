@@ -2,15 +2,15 @@ import React, {Component} from 'react';
 import './Color.scss'
 
 class Color extends Component {
-  constructor () {
-    super ()
+  constructor (props) {
+    super (props)
   }
 
   render () {
     return (
       <div className='Color'>
         <button>Unlocked</button>
-        <h3>Hex Code</h3>
+        <h3>Hex Code:{this.props.hexCode}</h3>
       </div>
     )
   }
