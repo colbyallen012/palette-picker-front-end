@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import './App.scss'
-import { fetchProjects } from '../../ApiCalls'
-import Generator from '../Generator/Generator'
+import './App.scss';
+import { fetchProjects } from '../../ApiCalls';
+import Generator from '../Generator/Generator';
 
 class App extends Component {
 

@@ -4,3 +4,4 @@ export const fetchProjects = () => {
   .then(res => res)
   .catch (error => error.message)   
 }
+
