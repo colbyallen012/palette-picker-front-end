@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { fetchPalettesById } from '../../ApiCalls';
-
+import { Palette } from '../../Components/Palette/Palette'
 
 export class Project extends Component {
   constructor (props) {
@@ -18,16 +18,27 @@ export class Project extends Component {
 
   getPalettes = () => {
     fetchPalettesById(this.state.project_id)
-      .then(data => console.log(data))
+      .then(palettes => this.setState({palettes: palettes}))
       .catch(error => error.message)
   }
 
   render() {
-    console.log(this.state.palettes)
+    const addPalettes = this.state.palettes.map((palette, key) => {
+      return <Palette 
+      key={key}
+      palette_id={palette.id}
+      project_id={palette.project_id}
+      name={palette.name}
+      color_1={palette.color_1}
+      color_2={palette.color_2}
+      color_3={palette.color_3}
+      color_4={palette.color_4}
+      color_5={palette.color_5}/>
+    })
     return (
       <div>
         <h3>{this.state.project_name}</h3>
-        <h4>{this.state.project_id}</h4>
+        {addPalettes}
       </div>
     )
   }
