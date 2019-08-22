@@ -5,7 +5,8 @@ export const fetchAllProjects = () => {
     .catch (error => error.message)   
 }
 
-export const fetchAllPalettes = (id) => {
+export const fetchPalettesById = (id) => {
+  console.log(id)
   return fetch(`http://localhost:3001/api/v1/projects/${id}/palettes`)
     .then(res => res.json())
     .then(data => data)

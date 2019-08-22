@@ -29,8 +29,8 @@ export class Generator extends Component {
 
 
   render () {
-   const displayRandomColors = this.state.randomColors.map((color, index) => {
-      return <Color hexCode={color} key={index}/>
+   const displayRandomColors = this.state.randomColors.map((color, key) => {
+      return <Color hexCode={color} key={key}/>
     })
   
     return (

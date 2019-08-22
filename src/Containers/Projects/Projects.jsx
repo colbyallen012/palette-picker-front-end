@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { fetchAllProjects } from '../../ApiCalls';
 import { Project } from '../Project/Project';
 

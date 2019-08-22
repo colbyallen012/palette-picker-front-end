@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { fetchAllPalettes } from '../../ApiCalls';
+import React, { Component } from 'react';
+import { fetchPalettesById } from '../../ApiCalls';
 
 
 export class Project extends Component {
@@ -12,12 +12,18 @@ export class Project extends Component {
     }
   }
 
+  componentDidMount() {
+    this.getPalettes()
+  }
 
   getPalettes = () => {
-
+    fetchPalettesById(this.state.project_id)
+      .then(data => console.log(data))
+      .catch(error => error.message)
   }
 
   render() {
+    console.log(this.state.palettes)
     return (
       <div>
         <h3>{this.state.project_name}</h3>
