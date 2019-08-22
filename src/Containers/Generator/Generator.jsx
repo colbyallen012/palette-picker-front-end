@@ -38,13 +38,14 @@ export class Generator extends Component {
     this.getRandomColor()
   }
 
-  // toggleLock = (id) => {
-  //   this.setState({randomColors})
-  // }
+  toggleLock = (id) => {
+    this.setState({})
+  }
 
 
   render () {
     const {color_1, color_2, color_3, color_4, color_5} = this.state
+    console.log(color_1)
     return (
       <div className='generator'>
         <h2>Palette Generator Goes here</h2>
@@ -52,6 +53,7 @@ export class Generator extends Component {
           Generate New Palette
         </button>
         <section className='color--container'>
+          {/* {displayRandomColors} */}
           <Color hexCode={color_1.color} key={1}/>
           <Color hexCode={color_2.color} key={2}/>
           <Color hexCode={color_3.color} key={3}/>
