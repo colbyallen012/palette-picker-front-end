@@ -18,19 +18,13 @@ export class Generator extends Component {
   }
 
   getRandomColor = () => {
-    let newRandomColors = []
-    for(var i = 0; i < 5; i++) {
-      newRandomColors.push({color: RandomColor(), isLocked: false})
-    }
-    this.setState(
-      [
-        newRandomColors[0], 
-        newRandomColors[1], 
-        newRandomColors[2], 
-        newRandomColors[3], 
-        newRandomColors[4] 
-      ])
-    return this.state.randomColors;
+    const newState = this.state.randomColors.map((card, index) => {
+      if(!card.isLocked) {
+        return {color: RandomColor(), isLocked: card.isLocked}
+      }
+      return card
+    })
+    this.setState({randomColors: newState})
   }
 
   clearRandomColor = () => {
@@ -67,11 +61,6 @@ export class Generator extends Component {
         </button>
         <section className='color--container'>
           {displayColors}
-          {/* <Color hexCode={this.state.randomColors[0].color} key={1} id={1} toggleLock={this.toggleLock} isLocked={this.state.randomColors[0].isLocked}/>
-          <Color hexCode={this.state.randomColors[1].color} key={2} id={2} toggleLock={this.toggleLock} isLocked={this.state.randomColors[1].isLocked}/>
-          <Color hexCode={this.state.randomColors[2].color} key={3} id={3} toggleLock={this.toggleLock} isLocked={this.state.randomColors[2].isLocked}/>
-          <Color hexCode={this.state.randomColors[3].color} key={4} id={4} toggleLock={this.toggleLock} isLocked={this.state.randomColors[3].isLocked}/>
-          <Color hexCode={this.state.randomColors[4].color} key={5} id={5} toggleLock={this.toggleLock} isLocked={this.state.randomColors[4].isLocked}/> */}
         </section>
         <form action="">
           <select name="Select project">
