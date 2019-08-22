@@ -7,35 +7,50 @@ class Generator extends Component {
   constructor () {
     super ();
     this.state = {
-      randomColors: ['#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF', '#FFFFFF']
+      randomColors: ['#FFFFF','#FFFFF','#FFFFF','#FFFFF','#FFFFF']
     }
   }
 
-  getRandomColor = () => {
-    for(var i = 0; i < 5; i++) {
-      this.setState({randomColors: [...this.state.randomColors, RandomColor()]})
-    }
+  
 
-    console.log(this.state.randomColors);
+  getRandomColor = () => {
+    let newRandomColors = []
+    for(var i = 0; i < 5; i++) {
+      newRandomColors.push(RandomColor())
+    }
+    this.setState({randomColors: newRandomColors})
+    return this.state.randomColors;
   }
 
   clearRandomColor = () => {
-    this.setState.randomColors = []
+    this.setState({randomColors: []})
+    this.getRandomColor()
   }
 
 
   render () {
-   const displayRandomColors = this.state.randomColors.map(color => {
-      return <Color hexCode={color}/>
+   const displayRandomColors = this.state.randomColors.map((color, index) => {
+      return <Color hexCode={color} key={index}/>
     })
   
     return (
       <div className='generator'>
         <h2>Palette Generator Goes here</h2>
-        <button onClick={() => {this.clearRandomColor() 
-          this.getRandomColor()}}>Generate New Palette</button>
-        {displayRandomColors}
-        {/* {this.state.randomColors.length > 0 && <Color hexCode={this.state.randomColor[0]}/>} */}
+        <button onClick={this.clearRandomColor}>
+          Generate New Palette
+        </button>
+        <section className='color--box'>
+          {displayRandomColors}
+        </section>
+        <form action="">
+          <select name="Select project">
+            <option value="Test 1">Test 1</option>
+            <option value="Test 2">Test 2</option>
+            <option value="Test 2">Test 3</option>
+          </select>
+          <input type="text"/>
+          <input type="submit"/>
+        </form>
       </div>
     )
   }
