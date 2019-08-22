@@ -7,7 +7,7 @@ class Generator extends Component {
   constructor () {
     super ();
     this.state = {
-      randomColors: []
+      randomColors: ['#FFFFF','#FFFFF','#FFFFF','#FFFFF','#FFFFF']
     }
   }
 
@@ -39,8 +39,18 @@ class Generator extends Component {
         <button onClick={this.clearRandomColor}>
           Generate New Palette
         </button>
-        {displayRandomColors}
-        {/* {this.state.randomColors.length > 0 && <Color hexCode={this.state.randomColor[0]}/>} */}
+        <section className='color--box'>
+          {displayRandomColors}
+        </section>
+        <form action="">
+          <select name="Select project">
+            <option value="Test 1">Test 1</option>
+            <option value="Test 2">Test 2</option>
+            <option value="Test 2">Test 3</option>
+          </select>
+          <input type="text"/>
+          <input type="submit"/>
+        </form>
       </div>
     )
   }
