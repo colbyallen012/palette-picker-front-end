@@ -1,16 +1,10 @@
 import React, {Component} from 'react';
 import './App.scss';
-import { fetchProjects } from '../../ApiCalls';
 import Generator from '../Generator/Generator';
 import Projects from '../Projects/Projects'
 
-class App extends Component {
+export class App extends Component {
 
-async componentDidMount () {
-  await fetchProjects()
-    .then(projects => console.log(projects))
-
-}
 
   render () {
     return (

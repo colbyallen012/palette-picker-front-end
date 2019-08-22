@@ -3,7 +3,7 @@ import './Generator.scss';
 import Color from '../../Components/Color/Color';
 import RandomColor from 'randomcolor';
 
-class Generator extends Component {
+export class Generator extends Component {
   constructor () {
     super ();
     this.state = {
@@ -29,8 +29,8 @@ class Generator extends Component {
 
 
   render () {
-   const displayRandomColors = this.state.randomColors.map((color, index) => {
-      return <Color hexCode={color} key={index}/>
+   const displayRandomColors = this.state.randomColors.map((color, key) => {
+      return <Color hexCode={color} key={key}/>
     })
   
     return (
@@ -39,7 +39,7 @@ class Generator extends Component {
         <button onClick={this.clearRandomColor}>
           Generate New Palette
         </button>
-        <section className='color--box'>
+        <section className='color--container'>
           {displayRandomColors}
         </section>
         <form action="">
