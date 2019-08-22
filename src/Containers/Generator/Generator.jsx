@@ -3,7 +3,7 @@ import './Generator.scss';
 import Color from '../../Components/Color/Color';
 import RandomColor from 'randomcolor';
 
-class Generator extends Component {
+export class Generator extends Component {
   constructor () {
     super ();
     this.state = {
