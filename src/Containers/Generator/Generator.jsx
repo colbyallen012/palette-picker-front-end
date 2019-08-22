@@ -7,13 +7,13 @@ export class Generator extends Component {
   constructor () {
     super ();
     this.state = {
-      // randomColors: [
-        color_1:{color:'#FFFFFF', isLocked: false},
-        color_2:{color:'#FFFFFF', isLocked: false},
-        color_3:{color:'#FFFFFF', isLocked: false},
-        color_4:{color:'#FFFFFF', isLocked: false},
-        color_5:{color:'#FFFFFF', isLocked: false}
-      // ]
+      randomColors: [
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false}
+      ]
     }
   }
 
@@ -23,13 +23,13 @@ export class Generator extends Component {
       newRandomColors.push({color: RandomColor(), isLocked: false})
     }
     this.setState(
-      {
-        color_1: newRandomColors[0], 
-        color_2: newRandomColors[1], 
-        color_3: newRandomColors[2], 
-        color_4: newRandomColors[3], 
-        color_5: newRandomColors[4] 
-      })
+      [
+        newRandomColors[0], 
+        newRandomColors[1], 
+        newRandomColors[2], 
+        newRandomColors[3], 
+        newRandomColors[4] 
+      ])
     return this.state.randomColors;
   }
 
@@ -39,13 +39,17 @@ export class Generator extends Component {
   }
 
   toggleLock = (id) => {
-    this.setState({})
+    const newState = this.state.randomColors.map((card, index) => {
+      if(index+1 === id) {
+        return {color: 'hello', isLocked: !card.isLocked}
+      }
+      return card
+    })
+    console.log('new state', newState)
+    this.setState({randomColors: newState})
   }
 
-
   render () {
-    const {color_1, color_2, color_3, color_4, color_5} = this.state
-    console.log(color_1)
     return (
       <div className='generator'>
         <h2>Palette Generator Goes here</h2>
@@ -53,12 +57,11 @@ export class Generator extends Component {
           Generate New Palette
         </button>
         <section className='color--container'>
-          {/* {displayRandomColors} */}
-          <Color hexCode={color_1.color} key={1}/>
-          <Color hexCode={color_2.color} key={2}/>
-          <Color hexCode={color_3.color} key={3}/>
-          <Color hexCode={color_4.color} key={4}/>
-          <Color hexCode={color_5.color} key={5}/>
+          <Color hexCode={this.state.randomColors[0].color} key={1} id={1} toggleLock={this.toggleLock}/>
+          <Color hexCode={this.state.randomColors[1].color} key={2} id={2} toggleLock={this.toggleLock}/>
+          <Color hexCode={this.state.randomColors[2].color} key={3} id={3} toggleLock={this.toggleLock}/>
+          <Color hexCode={this.state.randomColors[3].color} key={4} id={4} toggleLock={this.toggleLock}/>
+          <Color hexCode={this.state.randomColors[4].color} key={5} id={5} toggleLock={this.toggleLock}/>
         </section>
         <form action="">
           <select name="Select project">

@@ -12,7 +12,7 @@ class Color extends Component {
   render () {
     return (
       <div className='Color'>
-        <button>Unlocked</button>
+        <button onClick={() => this.props.toggleLock(this.props.id)}>Unlocked</button>
         <h3>Hex Code:{this.props.hexCode}</h3>
       </div>
     )
