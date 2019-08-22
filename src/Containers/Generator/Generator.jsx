@@ -39,7 +39,7 @@ class Generator extends Component {
         <button onClick={this.clearRandomColor}>
           Generate New Palette
         </button>
-        <section className='color--box'>
+        <section className='color--container'>
           {displayRandomColors}
         </section>
         <form action="">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export class Projects extends Component {
+class Projects extends Component {
   constructor() {
     super()
     this.state = {
@@ -15,6 +15,9 @@ export class Projects extends Component {
           <input type="text" placeholder="New project name"/>
           <input type="submit"/>
         </form>
+        <section className="project--container">
+
+        </section>
       </div>
     )
   }
