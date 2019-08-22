@@ -7,19 +7,24 @@ export class Generator extends Component {
   constructor () {
     super ();
     this.state = {
-      randomColors: ['#FFFFF','#FFFFF','#FFFFF','#FFFFF','#FFFFF']
+      randomColors: [
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false},
+      {color:'#FFFFFF', isLocked: false}
+      ]
     }
   }
 
-  
-
   getRandomColor = () => {
-    let newRandomColors = []
-    for(var i = 0; i < 5; i++) {
-      newRandomColors.push(RandomColor())
-    }
-    this.setState({randomColors: newRandomColors})
-    return this.state.randomColors;
+    const newState = this.state.randomColors.map((card, index) => {
+      if(!card.isLocked) {
+        return {color: RandomColor(), isLocked: card.isLocked}
+      }
+      return card
+    })
+    this.setState({randomColors: newState})
   }
 
   clearRandomColor = () => {
@@ -27,12 +32,27 @@ export class Generator extends Component {
     this.getRandomColor()
   }
 
+  toggleLock = (id) => {
+    const newState = this.state.randomColors.map((card, index) => {
+      if(index === id) {
+        return {color: card.color, isLocked: !card.isLocked}
+      }
+      return card
+    })
+    console.log('new state', newState)
+    this.setState({randomColors: newState})
+  }
 
   render () {
-   const displayRandomColors = this.state.randomColors.map((color, key) => {
-      return <Color hexCode={color} key={key}/>
+    const displayColors = this.state.randomColors.map((card, index) => {
+      return <Color 
+        hexCode={card.color} 
+        key={index} 
+        id={index} 
+        toggleLock={this.toggleLock} 
+        isLocked={card.isLocked}
+        />
     })
-  
     return (
       <div className='generator'>
         <h2>Palette Generator Goes here</h2>
@@ -40,7 +60,7 @@ export class Generator extends Component {
           Generate New Palette
         </button>
         <section className='color--container'>
-          {displayRandomColors}
+          {displayColors}
         </section>
         <form action="">
           <select name="Select project">
