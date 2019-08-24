@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './Palette.scss';
-import { deletePalette } from '../../ApiCalls';
+// import { deletePalette } from '../../ApiCalls';
 
 
 export class Palette extends Component {
   
+  
   handleDelete = (e) => {
     e.preventDefault()
-    deletePalette(this.props.palette_id)
+    this.props.deletePalette(this.props.palette_id)
   }
 
   render() {

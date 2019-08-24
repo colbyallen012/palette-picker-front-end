@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { deleteProject } from '../../ApiCalls';
+// import { deleteProject } from '../../ApiCalls';
 import { Palette } from '../../Components/Palette/Palette'
 
 export class Project extends Component {
@@ -7,28 +7,29 @@ export class Project extends Component {
     super(props)
     this.state = {
       project_name: this.props.name,
-      project_id: this.props.id,
-      palettes: this.props.palettes || []
+      project_id: this.props.id
     }
   }
 
   handleDelete = (e) => {
     e.preventDefault()
-    deleteProject(this.state.project_id)
+    this.props.deleteProject(this.state.project_id)
   }
 
   render() {
-    const addPalettes = this.state.palettes.map((palette, key) => {
+    const addPalettes = this.props.palettes.map((palette, key) => {
       return <Palette 
-      key={key}
-      palette_id={palette.id}
-      project_id={palette.project_id}
-      name={palette.name}
-      color_1={palette.color_1}
-      color_2={palette.color_2}
-      color_3={palette.color_3}
-      color_4={palette.color_4}
-      color_5={palette.color_5}/>
+        key={key}
+        palette_id={palette.id}
+        project_id={palette.project_id}
+        name={palette.name}
+        color_1={palette.color_1}
+        color_2={palette.color_2}
+        color_3={palette.color_3}
+        color_4={palette.color_4}
+        color_5={palette.color_5}
+        deletePalette={this.props.deletePalette}
+      />
     })
     return (
       <div>

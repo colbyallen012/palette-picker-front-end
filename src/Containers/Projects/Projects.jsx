@@ -4,20 +4,20 @@ import { Project } from '../Project/Project';
 import './Projects.scss'
 
 export class Projects extends Component {
-  constructor() {
-    super()
+  constructor(props) {
+    super(props)
     this.state = {
-      projectName: ''
+      newProjectName: ''
     }
   }
 
   handleProjectName = (e) => {
-    this.setState({projectName: e.target.value})
+    this.setState({newProjectName: e.target.value})
   }
 
   handleSubmitProject = (e) => {
     e.preventDefault()
-    const name = {name: this.state.projectName}
+    const name = {name: this.state.newProjectName}
     postProject(name)
   }
 
@@ -25,10 +25,15 @@ export class Projects extends Component {
     const addProjects = this.props.projects.map((project, key) => {
       const palettes = this.props.palettes.filter(palette => {
         return project.id === palette.project_id
-
       })
-      console.log(palettes)
-      return <Project name={project.name} id={project.id} palettes={palettes} key={key}/>
+      return <Project 
+        name={project.name} 
+        id={project.id} 
+        palettes={palettes} 
+        deleteProject={this.props.deleteProject}
+        deletePalette={this.props.deletePalette}
+        key={key}
+      />
     })
     return (
       <div className='Projects'>

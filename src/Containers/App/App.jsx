@@ -4,7 +4,9 @@ import Generator from '../Generator/Generator';
 import Projects from '../Projects/Projects'
 import { 
   fetchAllProjects,
-  fetchAllPalettes
+  fetchAllPalettes,
+  deleteProject,
+  deletePalette
  } from '../../ApiCalls';
 
 
@@ -17,7 +19,7 @@ export class App extends Component {
     }
   }
   componentDidMount () {
-    this.getPalettes()
+    this.getAllPalettes()
     this.getAllProjects()
   }
 
@@ -27,10 +29,26 @@ export class App extends Component {
       .catch(error => error.message)
   }
 
-  getPalettes = async () => {
+  getAllPalettes = async () => {
     await fetchAllPalettes(this.state.project_id)
       .then(palettes => this.setState({palettes: palettes}))
-      .catch(error => error.message)
+      .catch(error => console.log(error.message))
+  }
+
+  deleteProject = (project_id) => {
+    const remainingProjects = this.state.projects.filter(project => {
+      return project.id !== project_id
+    })
+    deleteProject(project_id)
+    this.setState({projects: remainingProjects})
+  }
+
+  deletePalette = (palette_id) => {
+    const remainingPalettes = this.state.palettes.filter(palette => {
+      return palette.id !== palette_id
+    })
+    deletePalette(palette_id)
+    this.setState({palettes: remainingPalettes})
   }
 
   render () {
@@ -38,7 +56,12 @@ export class App extends Component {
       <div className='App'>
         <h1>Happy Trees Palette Picker</h1>
         <Generator projects={this.state.projects}/>
-        <Projects projects={this.state.projects} palettes={this.state.palettes}/>
+        <Projects 
+          projects={this.state.projects} 
+          palettes={this.state.palettes}
+          deleteProject={this.deleteProject}
+          deletePalette={this.deletePalette}
+        />
       </div>
     )
   }
