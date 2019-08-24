@@ -1,24 +1,13 @@
 import React, { Component } from 'react';
-import { fetchAllProjects } from '../../ApiCalls';
+// import { fetchAllProjects } from '../../ApiCalls';
 import { Project } from '../Project/Project';
 import './Projects.scss'
 
 export class Projects extends Component {
-  constructor() {
-    super()
-    this.state = {
-      projects: []
-    }
-  }
 
-  async componentDidMount () {
-    await fetchAllProjects()
-      .then(projects => this.setState({projects: projects}))
-      .catch(error => error.message)
-  }
 
   render() {
-    const addProjects = this.state.projects.map((project, key) => {
+    const addProjects = this.props.projects.map((project, key) => {
       console.log(project)
       return <Project name={project.name} id={project.id} key={key}/>
     })

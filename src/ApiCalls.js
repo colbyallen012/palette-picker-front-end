@@ -12,3 +12,4 @@ export const fetchPalettesById = (id) => {
     .then(data => data)
     .catch(error => error.message)
 }
+
