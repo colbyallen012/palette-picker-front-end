@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchPalettesById } from '../../ApiCalls';
+import { fetchPalettesById, deleteProject } from '../../ApiCalls';
 import { Palette } from '../../Components/Palette/Palette'
 
 export class Project extends Component {
@@ -14,6 +14,11 @@ export class Project extends Component {
 
   componentDidMount() {
     this.getPalettes()
+  }
+
+  handleDelete = (e) => {
+    e.preventDefault()
+    deleteProject(this.state.project_id)
   }
 
   getPalettes = () => {
@@ -38,6 +43,7 @@ export class Project extends Component {
     return (
       <div>
         <h3>{this.state.project_name}</h3>
+        <button onClick={this.handleDelete}>Delete Project</button>
         {addPalettes}
       </div>
     )

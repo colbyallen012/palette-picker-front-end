@@ -45,28 +45,55 @@ export const postProject = (project) => {
 }
 //Nathan
 export const patchProject = (project) => {
-  return fetch('')
+  const options = {
+    method: 'PATCH',
+    body: JSON.stringify(project),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  return fetch(`http://localhost:3001/api/v1/projects/${project}`, options)
   .then(res => res.json())
   .then(data => data)
   .catch(error => error.message)
 }
 //Colby
 export const patchPalette = (palette) => {
-  return fetch('')
+  const options = {
+    method: 'PATCH',
+    body: JSON.stringify(palette),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  return fetch(`http://localhost:3001/api/v1/palettes/${palette}`, options)
   .then(res => res.json())
   .then(data => data)
   .catch(error => error.message)
 }
 //Nathan
 export const deleteProject = (project) => {
-  return fetch('')
+  console.log(project)
+  const options = {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  return fetch(`http://localhost:3001/api/v1/projects/${project}`, options)
   .then(res => res.json())
-  .then(data => data)
+  .then(data => console.log(data))
   .catch(error => error.message)
 }
 //Colby
 export const deletePalette = (palette) => {
-  return fetch('')
+  const options = {
+    method: 'DELETE',
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  return fetch(`http://localhost:3001/api/v1/palettes/${palette}`, options)
   .then(res => res.json())
   .then(data => data)
   .catch(error => error.message)
