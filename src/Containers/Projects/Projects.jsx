@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchAllProjects } from '../../ApiCalls';
+import { postProject } from '../../ApiCalls';
 import { Project } from '../Project/Project';
 import './Projects.scss'
 
@@ -7,25 +7,32 @@ export class Projects extends Component {
   constructor() {
     super()
     this.state = {
-      projects: []
+      projectName: ''
     }
   }
 
-  async componentDidMount () {
-    await fetchAllProjects()
-      .then(projects => this.setState({projects: projects}))
-      .catch(error => error.message)
+  handleProjectName = (e) => {
+    this.setState({projectName: e.target.value})
+  }
+
+  handleSubmitProject = (e) => {
+    e.preventDefault()
+    const name = {name: this.state.projectName}
+    postProject(name)
   }
 
   render() {
-    const addProjects = this.state.projects.map((project, key) => {
-      console.log(project)
+    const addProjects = this.props.projects.map((project, key) => {
       return <Project name={project.name} id={project.id} key={key}/>
     })
     return (
       <div className='Projects'>
-        <form action="">
-          <input type="text" placeholder="New project name"/>
+        <form onSubmit={this.handleSubmitProject}>
+          <input 
+            type="text" 
+            placeholder="New project name" 
+            onChange={this.handleProjectName}
+          />
           <input type="submit"/>
         </form>
         <section className="project-container">
