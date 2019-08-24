@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { fetchPalettesById, deleteProject } from '../../ApiCalls';
+import { deleteProject } from '../../ApiCalls';
 import { Palette } from '../../Components/Palette/Palette'
 
 export class Project extends Component {
@@ -8,23 +8,13 @@ export class Project extends Component {
     this.state = {
       project_name: this.props.name,
       project_id: this.props.id,
-      palettes: []
+      palettes: this.props.palettes || []
     }
-  }
-
-  componentDidMount() {
-    this.getPalettes()
   }
 
   handleDelete = (e) => {
     e.preventDefault()
     deleteProject(this.state.project_id)
-  }
-
-  getPalettes = () => {
-    fetchPalettesById(this.state.project_id)
-      .then(palettes => this.setState({palettes: palettes}))
-      .catch(error => error.message)
   }
 
   render() {

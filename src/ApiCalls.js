@@ -13,6 +13,13 @@ export const fetchPalettesById = (id) => {
     .then(data => data)
     .catch(error => error.message)
 }
+
+export const fetchAllPalettes = () => {
+  return fetch(`http://localhost:3001/api/v1/palettes`)
+    .then(res => res.json())
+    .then(data => data)
+    .catch(error => error.message)
+}
 //Nathan
 export const postPalette = (palette) => {
   console.log(palette)

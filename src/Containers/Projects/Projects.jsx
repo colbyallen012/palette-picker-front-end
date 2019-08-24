@@ -23,7 +23,12 @@ export class Projects extends Component {
 
   render() {
     const addProjects = this.props.projects.map((project, key) => {
-      return <Project name={project.name} id={project.id} key={key}/>
+      const palettes = this.props.palettes.filter(palette => {
+        return project.id === palette.project_id
+
+      })
+      console.log(palettes)
+      return <Project name={project.name} id={project.id} palettes={palettes} key={key}/>
     })
     return (
       <div className='Projects'>
