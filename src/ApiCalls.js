@@ -1,10 +1,11 @@
+//Nathan
 export const fetchAllProjects = () => {
   return fetch('http://localhost:3001/api/v1/projects')
     .then(res => res.json())
     .then(res => res)
     .catch (error => error.message)   
 }
-
+//Colby
 export const fetchPalettesById = (id) => {
   console.log(id)
   return fetch(`http://localhost:3001/api/v1/projects/${id}/palettes`)
@@ -12,7 +13,7 @@ export const fetchPalettesById = (id) => {
     .then(data => data)
     .catch(error => error.message)
 }
-
+//Nathan
 export const postPalette = (palette) => {
   console.log(palette)
   const options = {
@@ -27,7 +28,7 @@ export const postPalette = (palette) => {
     .then(data => data)
     .catch(error => error.message)
 }
-
+//Colby
 export const postProject = (project) => {
   console.log(project)
   const options = {
@@ -42,3 +43,32 @@ export const postProject = (project) => {
     .then(data => data)
     .catch(error => error.message)
 }
+//Nathan
+export const patchProject = (project) => {
+  return fetch('')
+  .then(res => res.json())
+  .then(data => data)
+  .catch(error => error.message)
+}
+//Colby
+export const patchPalette = (palette) => {
+  return fetch('')
+  .then(res => res.json())
+  .then(data => data)
+  .catch(error => error.message)
+}
+//Nathan
+export const deleteProject = (project) => {
+  return fetch('')
+  .then(res => res.json())
+  .then(data => data)
+  .catch(error => error.message)
+}
+//Colby
+export const deletePalette = (palette) => {
+  return fetch('')
+  .then(res => res.json())
+  .then(data => data)
+  .catch(error => error.message)
+}
+
