@@ -55,13 +55,12 @@ export class Generator extends Component {
     })
     return (
       <div className='generator'>
-        <h2>Palette Generator Goes here</h2>
+        <section className='color-container'>
+          {displayColors}
+        </section>
         <button onClick={this.clearRandomColor}>
           Generate New Palette
         </button>
-        <section className='color--container'>
-          {displayColors}
-        </section>
         <form action="">
           <select name="Select project">
             <option value="Test 1">Test 1</option>

@@ -1,6 +1,11 @@
 .Color {
-  background-color: grey;
-  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
   height: 200px;
+  margin: 20px;
   width: 200px;
+}
+
+.ghost {
+  margin: auto;
 }

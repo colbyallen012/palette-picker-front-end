@@ -1,7 +1,10 @@
-.generator {
+.color-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
-  .color--container {
-    display: flex;
-
-  }
+.lock {
+  margin: 5px auto;
+  width: 50%;
 }
