@@ -7,13 +7,13 @@ export class Palette extends Component {
   }
   render() {
     return (
-      <div>
-        <p>{this.props.name}</p>
-        <a href='pallete' className='tile' style={{backgroundColor: `#${this.props.color_1}`}}>{this.props.color_1}</a>
-        <a href='pallete'className='tile' style={{backgroundColor: `#${this.props.color_2}`}}>{this.props.color_2}</a>        
-        <a href='pallete'className='tile' style={{backgroundColor: `#${this.props.color_3}`}}>{this.props.color_3}</a>        
-        <a href='pallete' className='tile' style={{backgroundColor: `#${this.props.color_4}`}}>{this.props.color_4}</a>        
-        <a href='pallete' className='tile' style={{backgroundColor: `#${this.props.color_5}`}}>{this.props.color_5}</a>
+      <div className='project-palette'>
+        <h4 className='tileTitle'>{this.props.name}</h4>
+        <p className='tile' style={{backgroundColor: `#${this.props.color_1}`}}>{this.props.color_1}</p>
+        <p className='tile' style={{backgroundColor: `#${this.props.color_2}`}}>{this.props.color_2}</p>        
+        <p className='tile' style={{backgroundColor: `#${this.props.color_3}`}}>{this.props.color_3}</p>        
+        <p className='tile' style={{backgroundColor: `#${this.props.color_4}`}}>{this.props.color_4}</p>        
+        <p className='tile' style={{backgroundColor: `#${this.props.color_5}`}}>{this.props.color_5}</p>
       </div>
     )
   }

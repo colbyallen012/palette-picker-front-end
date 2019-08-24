@@ -1,6 +1,14 @@
-.tile {
-  // background-color: black;
-  height: 20px;
+.tileTitle {
   margin: 5px;
-  width: 20px;
+}
+
+.tile {
+  height: 25px;
+  margin: 5px;
+  width: 75px;
+}
+
+.project-palette {
+  display: flex;
+  flex-direction: row;
 }
