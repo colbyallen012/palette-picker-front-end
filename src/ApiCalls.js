@@ -13,3 +13,17 @@ export const fetchPalettesById = (id) => {
     .catch(error => error.message)
 }
 
+export const postPalette = (palette) => {
+  console.log(palette)
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(palette),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  return fetch('http://localhost:3001/api/v1/palettes', options)
+    .then(res => res.json())
+    .then(data => data)
+    .catch(error => error.message)
+}
