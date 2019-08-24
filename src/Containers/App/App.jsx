@@ -9,7 +9,7 @@ export class App extends Component {
   render () {
     return (
       <div className='App'>
-        <h1>The Palette Picker</h1>
+        <h1>Happy Trees Palette Picker</h1>
         <Generator/>
         <Projects/>
       </div>

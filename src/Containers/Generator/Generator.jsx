@@ -8,11 +8,11 @@ export class Generator extends Component {
     super ();
     this.state = {
       randomColors: [
-      {color:'#FFFFFF', isLocked: false},
-      {color:'#FFFFFF', isLocked: false},
-      {color:'#FFFFFF', isLocked: false},
-      {color:'#FFFFFF', isLocked: false},
-      {color:'#FFFFFF', isLocked: false}
+      {color:'#000000', isLocked: false},
+      {color:'#000000', isLocked: false},
+      {color:'#000000', isLocked: false},
+      {color:'#000000', isLocked: false},
+      {color:'#000000', isLocked: false}
       ]
     }
   }
@@ -55,13 +55,12 @@ export class Generator extends Component {
     })
     return (
       <div className='generator'>
-        <h2>Palette Generator Goes here</h2>
+        <section className='color-container'>
+          {displayColors}
+        </section>
         <button onClick={this.clearRandomColor}>
           Generate New Palette
         </button>
-        <section className='color--container'>
-          {displayColors}
-        </section>
         <form action="">
           <select name="Select project">
             <option value="Test 1">Test 1</option>
