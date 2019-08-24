@@ -53,6 +53,11 @@ export class Generator extends Component {
         isLocked={card.isLocked}
         />
     })
+
+    const projectList = this.props.projects.map((project, key) => {
+      return <option value={project.name} key={key}>{project.name}</option>
+    })
+
     return (
       <div className='generator'>
         <section className='color-container'>
@@ -63,9 +68,7 @@ export class Generator extends Component {
         </button>
         <form action="">
           <select name="Select project">
-            <option value="Test 1">Test 1</option>
-            <option value="Test 2">Test 2</option>
-            <option value="Test 2">Test 3</option>
+            {projectList}
           </select>
           <input type="text"/>
           <input type="submit"/>
