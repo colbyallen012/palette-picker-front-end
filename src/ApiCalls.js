@@ -27,3 +27,18 @@ export const postPalette = (palette) => {
     .then(data => data)
     .catch(error => error.message)
 }
+
+export const postProject = (project) => {
+  console.log(project)
+  const options = {
+    method: 'POST',
+    body: JSON.stringify(project),
+    headers: {
+      "Content-Type": "application/json"
+    }
+  }
+  return fetch('http://localhost:3001/api/v1/projects', options)
+    .then(res => res.json())
+    .then(data => data)
+    .catch(error => error.message)
+}
