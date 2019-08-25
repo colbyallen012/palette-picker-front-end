@@ -43,7 +43,7 @@ export class Projects extends Component {
             placeholder="New project name" 
             onChange={this.handleProjectName}
           />
-          <input type="submit"/>
+          <input type="submit" value="Save project"/>
         </form>
         <section className="project-container">
           {addProjects}
