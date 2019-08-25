@@ -9,7 +9,6 @@ import {
   deletePalette
  } from '../../ApiCalls';
 
-
 export class App extends Component {
   constructor() {
     super()
@@ -24,12 +23,14 @@ export class App extends Component {
   }
 
   getAllProjects = async () => {
+    console.log(this.state.projects)
     await fetchAllProjects()
       .then(projects => this.setState({projects: projects}))
       .catch(error => error.message)
   }
 
   getAllPalettes = async () => {
+    console.log(this.state.palettes)
     await fetchAllPalettes(this.state.project_id)
       .then(palettes => this.setState({palettes: palettes}))
       .catch(error => console.log(error.message))
@@ -55,12 +56,16 @@ export class App extends Component {
     return (
       <div className='App'>
         <h1>Happy Trees Palette Picker</h1>
-        <Generator projects={this.state.projects}/>
+        <Generator 
+          projects={this.state.projects}
+          getAllPalettes={this.getAllPalettes}
+        />
         <Projects 
           projects={this.state.projects} 
           palettes={this.state.palettes}
           deleteProject={this.deleteProject}
           deletePalette={this.deletePalette}
+          getAllProjects={this.getAllProjects}
         />
       </div>
     )

@@ -15,10 +15,11 @@ export class Projects extends Component {
     this.setState({newProjectName: e.target.value})
   }
 
-  handleSubmitProject = (e) => {
+  handleSubmitProject = async (e) => {
     e.preventDefault()
     const name = {name: this.state.newProjectName}
-    postProject(name)
+    await postProject(name)
+    this.props.getAllProjects()
   }
 
   render() {

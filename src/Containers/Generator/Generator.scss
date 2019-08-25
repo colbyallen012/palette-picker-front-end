@@ -1,7 +1,19 @@
-.color-container {
-  min-width: 100%;
-  display: flex;
-  overflow-x: auto;
+
+.generator {
+  .color-container {
+    min-width: 100%;
+    display: flex;
+    overflow-x: auto;
+  }
+  .gen-palette {
+    height: 30px;
+    background: #21d159;
+    border-radius: 7px;
+    border: none;
+  }
+  .save-palette {
+    
+  }
 }
 
 .lock {

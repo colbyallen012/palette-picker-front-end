@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import './Palette.scss';
 import Popup from "reactjs-popup";
-// import Popup from './Popup'
 
 export class Palette extends Component {
   constructor() {
