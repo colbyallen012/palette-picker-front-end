@@ -41,7 +41,6 @@ export class Generator extends Component {
       }
       return card
     })
-    console.log('new state', newState)
     this.setState({randomColors: newState})
   }
 
@@ -59,7 +58,6 @@ export class Generator extends Component {
       color_4: colors[3].color,
       color_5: colors[4].color
     }
-    console.log(newPalette)
     postPalette(newPalette)
   }
 
