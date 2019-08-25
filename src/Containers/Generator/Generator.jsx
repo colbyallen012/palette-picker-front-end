@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import './Generator.scss';
 import Color from '../../Components/Color/Color';
 import RandomColor from 'randomcolor';
-import {postPalette} from '../../ApiCalls'
+import {postPalette} from '../../ApiCalls';
 
 export class Generator extends Component {
   constructor () {
@@ -75,7 +75,7 @@ export class Generator extends Component {
         id={index} 
         toggleLock={this.toggleLock} 
         isLocked={card.isLocked}
-        />
+      />
     })
 
     const projectList = this.props.projects.map((project, key) => {
@@ -95,8 +95,8 @@ export class Generator extends Component {
           <option value="">--Please choose an option--</option>
             {projectList}
           </select>
-          <input type="text"/>
-          <input type="submit"/>
+          <input type="text" placeholder="New palette name"/>
+          <input type="submit" value="Save palette"/>
         </form>
       </div>
     )
