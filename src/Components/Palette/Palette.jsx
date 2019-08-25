@@ -25,7 +25,7 @@ export class Palette extends Component {
 
     return (
       <Popup trigger={
-      <div className='project-palette' onClick={this.handlePopup}>
+      <div className='mini-palette' onClick={this.handlePopup}>
         <h4 className='tileTitle'>{this.props.name}</h4>
         <p className='tile' style={{backgroundColor: `${color_1}`}}></p>
         <p className='tile' style={{backgroundColor: `${color_2}`}}></p>        
@@ -36,11 +36,23 @@ export class Palette extends Component {
       } modal>
       <div className='project-palette' onClick={this.handlePopup}>
         <h4 className='tileTitle'>{this.props.name}</h4>
-        <p className='tile' style={{backgroundColor: `${color_1}`}}></p>
-        <p className='tile' style={{backgroundColor: `${color_2}`}}></p>        
-        <p className='tile' style={{backgroundColor: `${color_3}`}}></p>        
-        <p className='tile' style={{backgroundColor: `${color_4}`}}></p>        
-        <p className='tile' style={{backgroundColor: `${color_5}`}}></p>
+        <section>
+          <div className='color-pad' style={{backgroundColor: `${color_1}`}}>
+            <p>{color_1}</p>
+          </div>
+          <div className='color-pad' style={{backgroundColor: `${color_2}`}}>
+            <p>{color_2}</p>
+          </div>        
+          <div className='color-pad' style={{backgroundColor: `${color_3}`}}>
+            <p>{color_3}</p>
+          </div>        
+          <div className='color-pad' style={{backgroundColor: `${color_4}`}}>
+            <p>{color_4}</p>
+          </div>        
+          <div className='color-pad' style={{backgroundColor: `${color_5}`}}>
+            <p>{color_5}</p>
+          </div>
+        </section>
         <button onClick={this.handleDelete}>Delete Palette</button>
       </div>
     </Popup>
