@@ -30,8 +30,10 @@ describe('Projects', () => {
     expect(wrapper.state('newProjectName')).toEqual(expected)
   })
 
-  it.skip('should run postProject when handleSubmitProject is called', () => {
+  it('should run postProject when handleSubmitProject is called', () => {
     const currentState = {newProjectName:'Project Name'};
-    wrapper.instance().submitIdea({preventDefault: jest.fn()});
+    wrapper.instance().setState(currentState);
+    wrapper.instance().handleSubmitProject({preventDefault: jest.fn()});
+    expect(wrapper.state('newProjectName')).toEqual(currentState.newProjectName)
   })
 })
