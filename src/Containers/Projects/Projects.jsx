@@ -42,6 +42,7 @@ export class Projects extends Component {
             type="text" 
             placeholder="New project name" 
             onChange={this.handleProjectName}
+            required
           />
           <input type="submit" value="Save project"/>
         </form>
