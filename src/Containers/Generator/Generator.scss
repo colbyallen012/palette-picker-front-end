@@ -1,8 +1,12 @@
 
 .generator {
+  // display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
   .color-container {
     min-width: 100%;
     display: flex;
+    justify-content: center;
     overflow-x: auto;
   }
   .gen-palette {
@@ -12,7 +16,7 @@
     border: none;
   }
   .save-palette {
-    
+
   }
 }
 
