@@ -4,6 +4,8 @@ import Generator from './Generator';
 
 describe('Generator', () => {
   let wrapper, instance;
+  const originalColor = {color:'#000000', isLocked: false}
+  const newColor = {color:'#FFFFF', isLocked: false}
   const projects = [{name: 'Bat Cave'}]
   const palettes = [{
     name: 'floor',
@@ -24,6 +26,12 @@ describe('Generator', () => {
 
   it('Generator should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
+  })
+
+  it('getRandomColor should set state', () => {
+    expect(wrapper.state('randomColors')[0]).toEqual(originalColor)
+    instance.getRandomColor()
+    expect(wrapper.state('randomColors')[0]).not.toEqual(originalColor)
   })
 
 
