@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Palette should match snapshot 1`] = `
+<Popup
+  arrow={true}
+  arrowStyle={Object {}}
+  className=""
+  closeOnDocumentClick={true}
+  closeOnEscape={true}
+  contentStyle={Object {}}
+  defaultOpen={false}
+  disabled={false}
+  keepTooltipInside={false}
+  lockScroll={false}
+  modal={true}
+  mouseEnterDelay={100}
+  mouseLeaveDelay={100}
+  offsetX={0}
+  offsetY={0}
+  on={
+    Array [
+      "click",
+    ]
+  }
+  onClose={[Function]}
+  onOpen={[Function]}
+  open={false}
+  overlayStyle={Object {}}
+  position="bottom center"
+  repositionOnResize={true}
+  trigger={
+    <div
+      className="mini-palette"
+      onClick={[Function]}
+    >
+      <h4
+        className="tileTitle"
+      />
+      <p
+        className="tile"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      />
+      <p
+        className="tile"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      />
+      <p
+        className="tile"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      />
+      <p
+        className="tile"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      />
+      <p
+        className="tile"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      />
+    </div>
+  }
+>
+  <div
+    className="project-palette"
+    onClick={[Function]}
+  >
+    <h4
+      className="tileTitle"
+    />
+    <section>
+      <div
+        className="color-pad"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      >
+        <p />
+      </div>
+      <div
+        className="color-pad"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      >
+        <p />
+      </div>
+      <div
+        className="color-pad"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      >
+        <p />
+      </div>
+      <div
+        className="color-pad"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      >
+        <p />
+      </div>
+      <div
+        className="color-pad"
+        style={
+          Object {
+            "backgroundColor": "undefined",
+          }
+        }
+      >
+        <p />
+      </div>
+    </section>
+    <button
+      onClick={[Function]}
+    >
+      Delete Palette
+    </button>
+  </div>
+</Popup>
+`;

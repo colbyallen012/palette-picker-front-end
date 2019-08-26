@@ -1,5 +1,5 @@
 import React from 'react';
-import Color from '../Components/Color/Color'
+import Color from '../../Components/Color/Color'
 
 const CardContainer = ({colors}) => {
   const displayRandomColors = colors.map(color => {

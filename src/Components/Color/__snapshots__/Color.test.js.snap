@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Color should match snapshot 1`] = `
+<div
+  className="Color"
+  style={
+    Object {
+      "MozBoxShadow": "9px 17px 5px -4px rgba(255, 255, 255, 0.5)",
+      "WebkitBoxShadow": "9px 17px 5px -4px rgba(255, 255, 255, 0.5)",
+      "backgroundColor": "FFFFFF",
+      "boxShadow": "9px 17px 5px -4px rgba(255, 255, 255, 0.5)",
+    }
+  }
+>
+  <button
+    className="lock"
+    onClick={[Function]}
+  >
+    Unlocked
+  </button>
+  <h3>
+    Hex Code:
+    FFFFFF
+  </h3>
+</div>
+`;
