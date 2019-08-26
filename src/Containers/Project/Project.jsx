@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-// import { deleteProject } from '../../ApiCalls';
+import './Project.scss'
 import { Palette } from '../../Components/Palette/Palette'
 
 export class Project extends Component {
@@ -32,7 +32,7 @@ export class Project extends Component {
       />
     })
     return (
-      <div>
+      <div className="project">
         <h3>{this.state.project_name}</h3>
         <button onClick={this.handleDelete}>Delete Project</button>
         {addPalettes}

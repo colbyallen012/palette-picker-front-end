@@ -41,11 +41,10 @@ export class Generator extends Component {
       }
       return card
     })
-    console.log('new state', newState)
     this.setState({randomColors: newState})
   }
 
-  handleSubmitPalette = (e) => {
+  handleSubmitPalette = async (e) => {
     e.preventDefault()
     const projectName = this.state.selectedProject
     const paletteName = e.target[1].value
@@ -59,8 +58,8 @@ export class Generator extends Component {
       color_4: colors[3].color,
       color_5: colors[4].color
     }
-    console.log(newPalette)
-    postPalette(newPalette)
+    await postPalette(newPalette)
+    this.props.getAllPalettes()
   }
 
   handleSelectProject = (e) => {
@@ -87,12 +86,12 @@ export class Generator extends Component {
         <section className='color-container'>
           {displayColors}
         </section>
-        <button onClick={this.clearRandomColor}>
+        <button onClick={this.clearRandomColor} className="gen-palette">
           Generate New Palette
         </button>
-        <form action="" onSubmit={this.handleSubmitPalette}>
+        <form className="save-palette" onSubmit={this.handleSubmitPalette}>
           <select name="Select project" onChange={this.handleSelectProject} required>
-          <option value="">--Please choose an option--</option>
+          <option value="">--Choose a project--</option>
             {projectList}
           </select>
           <input type="text" placeholder="New palette name"/>
