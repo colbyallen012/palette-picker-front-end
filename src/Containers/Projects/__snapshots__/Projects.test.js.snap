@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Projects should match snapshot 1`] = `
+<div
+  className="Projects"
+>
+  <form
+    onSubmit={[Function]}
+  >
+    <input
+      onChange={[Function]}
+      placeholder="New project name"
+      type="text"
+    />
+    <input
+      type="submit"
+      value="Save project"
+    />
+  </form>
+  <section
+    className="project-container"
+  />
+</div>
+`;
