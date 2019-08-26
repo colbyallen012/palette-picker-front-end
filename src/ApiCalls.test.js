@@ -54,7 +54,33 @@ describe('ApiCalls', () => {
   })
 
   describe('Get all palettes', () => {
-    
+    let mockPalette;
+
+    beforeEach(() => {
+      mockPalette = [{
+          id: 3,
+          project_id: 1,
+          name: "palette 3",
+          color_1: "31393C",
+          color_2: "2176FF",
+          color_3: "33A1FD",
+          color_4: "FDCA40",
+          color_5: "F79824",
+      }]
+
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockPalette)
+        })
+      })
+    })
+
+    it('should be called with the correct url', async () => {
+      const expected = `http://localhost:3001/api/v1/palettes`;
+      fetchAllPalettes();
+      expect(window.fetch).toHaveBeenCalledWith(expected)
+    })
   })
 
   describe('Post palettes', () => {
