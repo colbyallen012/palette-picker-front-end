@@ -41,5 +41,12 @@ describe('Generator', () => {
     expect(wrapper.state('randomColors')[0].color).toEqual(originalColor.color)
   })
 
+  it('clearRandomColor should set randomColors to empty array', () => {
+    expect(wrapper.state('randomColors').length).toEqual(5)
+    instance.getRandomColor = jest.fn()
+    instance.clearRandomColor()
+    expect(wrapper.state('randomColors').length).toEqual(0)
+  })
+
 
 })
