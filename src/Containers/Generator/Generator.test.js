@@ -28,10 +28,17 @@ describe('Generator', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  it('getRandomColor should set state', () => {
+  it('getRandomColor should change color state', () => {
     expect(wrapper.state('randomColors')[0]).toEqual(originalColor)
     instance.getRandomColor()
     expect(wrapper.state('randomColors')[0]).not.toEqual(originalColor)
+  })
+
+  it('getRandomColor should not change color state', () => {
+    expect(wrapper.state('randomColors')[0]).toEqual(originalColor)
+    wrapper.setState({randomColors: [{color:'#000000', isLocked: true}]})
+    instance.getRandomColor()
+    expect(wrapper.state('randomColors')[0].color).toEqual(originalColor.color)
   })
 
 
