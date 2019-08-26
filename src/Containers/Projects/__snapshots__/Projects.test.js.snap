@@ -5,6 +5,7 @@ exports[`Projects should match snapshot 1`] = `
   className="Projects"
 >
   <form
+    id="new_project"
     onSubmit={[Function]}
   >
     <input
