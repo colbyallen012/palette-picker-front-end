@@ -20,6 +20,11 @@ export class Projects extends Component {
     const name = {name: this.state.newProjectName}
     await postProject(name)
     this.props.getAllProjects()
+    this.resetProjectInput()
+  }
+
+  resetProjectInput = () => {
+    this.setState({newProjectName: ''})
   }
 
   render() {
