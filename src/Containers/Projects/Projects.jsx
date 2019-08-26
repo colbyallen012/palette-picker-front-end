@@ -20,11 +20,7 @@ export class Projects extends Component {
     const name = {name: this.state.newProjectName}
     await postProject(name)
     this.props.getAllProjects()
-    this.resetProjectInput()
-  }
-
-  resetProjectInput = () => {
-    this.setState({newProjectName: ''})
+    document.getElementById('new_project').reset()
   }
 
   render() {
@@ -43,7 +39,7 @@ export class Projects extends Component {
     })
     return (
       <div className='Projects'>
-        <form onSubmit={this.handleSubmitProject}>
+        <form id="new_project" onSubmit={this.handleSubmitProject}>
           <input 
             type="text" 
             placeholder="New project name" 
