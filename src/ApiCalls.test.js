@@ -28,11 +28,17 @@ describe('ApiCalls', () => {
       })
     })
 
-    it('should be called with the correct url', () => {
+    it('should be called with the correct url', async () => {
       const id = 1;
       const expected = `http://localhost:3001/api/v1/projects/${id}/palettes`;
       fetchPalettesById(id);
       expect(window.fetch).toHaveBeenCalledWith(expected)
+    })
+
+    it('should return a parsed response', async () => {
+      const id = 1;
+      const result = await fetchPalettesById(id);
+      expect(result).toEqual(mockPalette)
     })
   })
 
