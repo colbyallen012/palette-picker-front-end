@@ -1,3 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Card Container should match snapshot 1`] = `undefined`;
+exports[`Card Container should match snapshot 1`] = `
+<section
+  className="card-container"
+>
+  <Color
+    hexCode={
+      Object {
+        "color_1": "test",
+        "color_2": "test",
+        "color_3": "test",
+        "color_4": "test",
+        "color_5": "test",
+      }
+    }
+  />
+</section>
+`;

@@ -13,11 +13,11 @@ describe('Card Container', () => {
   }]
 
   beforeEach(() => {
-    wrapper = shallow(<CardContainer hexCode={mockColors}/>)
+    wrapper = shallow(<CardContainer colors={mockColors}/>)
   })
 
   it('should match snapshot', () => {
-    expect(wrapper).toMatchSnapshot()
+    expect(wrapper).toMatchSnapshot();
   }); 
 })
 
