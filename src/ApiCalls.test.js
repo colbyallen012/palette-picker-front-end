@@ -23,6 +23,7 @@ describe('ApiCalls', () => {
 
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
+          ok: true,
           json: () => Promise.resolve(mockPalette)
         })
       })
@@ -40,6 +41,20 @@ describe('ApiCalls', () => {
       const result = await fetchPalettesById(id);
       expect(result).toEqual(mockPalette)
     })
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject({
+          ok: false,
+          message: 'Error fetching palette'
+        })
+      });
+       expect(fetchPalettesById(1)).rejects.toEqual(Error('Error fetching team'));
+    })
+  })
+
+  describe('Get all palettes', () => {
+    
   })
 
   describe('Post palettes', () => {
