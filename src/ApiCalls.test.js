@@ -98,8 +98,12 @@ describe('ApiCalls', () => {
 
   describe('Post projects', () => {
     let mockProject;
+    let mockResponse;
 
     beforeEach(() => {
+      mockResponse = {
+        data: { name: 'Fake Project' }
+      };
       mockProject = mockProject = { name: 'Fake Project'}
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
@@ -121,6 +125,11 @@ describe('ApiCalls', () => {
       postProject(mockProject);
       expect(window.fetch).toHaveBeenCalledWith(url, options);
     });
+
+    it('should return a project if response is ok', async () => {  
+      await expect(postProject(mockProject)).resolves.toEqual(mockResponse.data);
+    });
+
   })
 
   describe('Patch projects', () => {
