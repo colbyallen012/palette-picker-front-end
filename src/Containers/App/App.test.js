@@ -60,4 +60,6 @@ describe('App', () => {
     expect(wrapper.state('palettes')).toEqual([])
   })
 
+  
+
 })
