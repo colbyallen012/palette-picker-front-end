@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Generator Generator should match snapshot 1`] = `
+<div
+  className="generator"
+>
+  <section
+    className="color-container"
+  >
+    <Color
+      hexCode="#b2ffb7"
+      id={0}
+      isLocked={false}
+      key="0"
+      toggleLock={[Function]}
+    />
+    <Color
+      hexCode="#3904e5"
+      id={1}
+      isLocked={false}
+      key="1"
+      toggleLock={[Function]}
+    />
+    <Color
+      hexCode="#faadff"
+      id={2}
+      isLocked={false}
+      key="2"
+      toggleLock={[Function]}
+    />
+    <Color
+      hexCode="#ad38d1"
+      id={3}
+      isLocked={false}
+      key="3"
+      toggleLock={[Function]}
+    />
+    <Color
+      hexCode="#f7ef13"
+      id={4}
+      isLocked={false}
+      key="4"
+      toggleLock={[Function]}
+    />
+  </section>
+  <button
+    className="gen-palette"
+    onClick={[Function]}
+  >
+    Generate New Palette
+  </button>
+  <form
+    id="save-palette"
+    onSubmit={[Function]}
+  >
+    <select
+      name="Select project"
+      onChange={[Function]}
+      required={true}
+    >
+      <option
+        value=""
+      >
+        --Choose a project--
+      </option>
+      <option
+        key="0"
+        value="Bat Cave"
+      >
+        Bat Cave
+      </option>
+    </select>
+    <input
+      placeholder="New palette name"
+      type="text"
+    />
+    <input
+      type="submit"
+      value="Save palette"
+    />
+  </form>
+</div>
+`;

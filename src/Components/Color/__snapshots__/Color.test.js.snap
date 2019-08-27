@@ -19,7 +19,9 @@ exports[`Color should match snapshot 1`] = `
     src="padlock-unlock.svg"
     type="image"
   />
-  <h3>
+  <h3
+    clasName="hex"
+  >
     Hex Code:
     FFFFFF
   </h3>
