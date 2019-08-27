@@ -4,6 +4,7 @@ import Generator from './Generator';
 
 describe('Generator', () => {
   let wrapper, instance;
+  const event = {preventDefault: jest.fn()}
   const originalColor = {color:'#000000', isLocked: false}
   const newColor = {color:'#FFFFF', isLocked: false}
   const projects = [{name: 'Bat Cave'}]
@@ -63,6 +64,10 @@ describe('Generator', () => {
     expect(wrapper.state('randomColors')[1].isLocked).toEqual(false)
   })
 
-
+  it('handleSubmitPalette should preventDefault', () => {
+    expect(event.preventDefault).toHaveBeenCalledTimes(0)
+    instance.handleSubmitPalette(event)
+    expect(event.preventDefault).toHaveBeenCalledTimes(1)
+  })
 
 })
