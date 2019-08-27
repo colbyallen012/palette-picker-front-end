@@ -10,4 +10,8 @@ describe('App', () => {
     wrapper = shallow(<App/>)
     instance = wrapper.instance()
   })
+
+  it('should match snapshot', () => {
+    expect(wrapper).toMatchSnapshot()
+  })
 })
