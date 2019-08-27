@@ -22,4 +22,5 @@ describe('App', () => {
     await instance.getAllProjects()
     expect( spy).toHaveBeenCalledTimes(1)
   })
+
 })
