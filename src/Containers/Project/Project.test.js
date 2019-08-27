@@ -3,7 +3,7 @@ import {shallow} from 'enzyme';
 import {Project} from './Project';
 
 describe('Project', () => {
-  let wrapper
+  let wrapper, instance
   const projects = [{name: 'Bat Cave'}]
   const palettes = [{
     name: 'floor',
@@ -20,13 +20,22 @@ describe('Project', () => {
     deletePalette: jest.fn(),
     getAllProjects: jest.fn()
   }
+  const event = {
+    preventDefault: jest.fn()
+  }
   beforeEach(() => {
     wrapper = shallow(<Project{...props}/>)
+    instance = wrapper.instance()
   })
 
   it('Project should match snapshot', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-
+  it('handleDelete should call deleteProject with project id', () => {
+    wrapper.setState({project_id: 1})
+    expect(props.deleteProject).toHaveBeenCalledTimes(0)
+    instance.handleDelete(event)
+    expect(props.deleteProject).toHaveBeenCalledWith(1)
+  })
 })
