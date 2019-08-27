@@ -60,7 +60,7 @@ export class Generator extends Component {
     }
     await postPalette(newPalette)
     this.props.getAllPalettes()
-    document.getElementById('save-palette').reset()
+    this.form.reset()
   }
 
   handleSelectProject = (e) => {
@@ -90,7 +90,11 @@ export class Generator extends Component {
         <button onClick={this.clearRandomColor} className="gen-palette">
           Generate New Palette
         </button>
-        <form id="save-palette" onSubmit={this.handleSubmitPalette}>
+        <form 
+          id="save-palette" 
+          onSubmit={this.handleSubmitPalette}
+          ref={form => this.form = form}
+        >
           <select name="Select project" onChange={this.handleSelectProject} required>
           <option value="">--Choose a project--</option>
             {projectList}
