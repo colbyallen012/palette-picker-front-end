@@ -83,6 +83,14 @@ describe('ApiCalls', () => {
       const result = await fetchAllPalettes();
       expect(result).toEqual(mockPalette)
     })
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject('Error fetching palettes')
+      });
+      await expect(window.fetch()).rejects.toEqual('Error fetching palettes');;
+    })
+
   })
 
   describe('Post palettes', () => {
