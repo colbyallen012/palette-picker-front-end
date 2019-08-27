@@ -7,7 +7,6 @@ export const fetchAllProjects = () => {
 }
 //Colby
 export const fetchPalettesById = (id) => {
-  console.log(id)
   return fetch(`http://localhost:3001/api/v1/projects/${id}/palettes`)
     .then(res => res.json())
     .then(data => data)
@@ -22,7 +21,6 @@ export const fetchAllPalettes = () => {
 }
 //Nathan
 export const postPalette = (palette) => {
-  console.log(palette)
   const options = {
     method: 'POST',
     body: JSON.stringify(palette),
@@ -37,7 +35,6 @@ export const postPalette = (palette) => {
 }
 //Colby
 export const postProject = (project) => {
-  console.log(project)
   const options = {
     method: 'POST',
     body: JSON.stringify(project),
@@ -80,7 +77,6 @@ export const patchPalette = (palette) => {
 }
 //Nathan
 export const deleteProject = (project) => {
-  console.log(project)
   const options = {
     method: 'DELETE',
     headers: {
