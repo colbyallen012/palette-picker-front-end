@@ -53,7 +53,12 @@ describe('Generator', () => {
     expect(instance.getRandomColor).toHaveBeenCalledTimes(0)
     instance.clearRandomColor()
     expect(instance.getRandomColor).toHaveBeenCalledTimes(1)
+  })
 
+  it('toggleLock should toggle first randomColors to true', () => {
+    expect(wrapper.state('randomColors')[0]).toEqual(originalColor)
+    instance.toggleLock(0)
+    expect(wrapper.state('randomColors')[0].isLocked).toEqual(true)
   })
 
 
