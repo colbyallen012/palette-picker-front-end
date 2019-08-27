@@ -46,4 +46,11 @@ describe('App', () => {
     expect(wrapper.state('projects')).toEqual([])
   })
 
+  it('removePalette should call deletePalette', () => {
+    constants.deletePalette = jest.fn(() => Promise.resolve([]))
+    expect(constants.deletePalette).toHaveBeenCalledTimes(0)
+    instance.removePalette()
+    expect( constants.deletePalette).toHaveBeenCalledTimes(1)
+  })
+
 })

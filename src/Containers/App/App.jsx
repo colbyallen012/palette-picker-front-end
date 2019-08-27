@@ -44,7 +44,7 @@ export class App extends Component {
     this.setState({projects: remainingProjects})
   }
 
-  deletePalette = (palette_id) => {
+  removePalette = (palette_id) => {
     const remainingPalettes = this.state.palettes.filter(palette => {
       return palette.id !== palette_id
     })
@@ -64,7 +64,7 @@ export class App extends Component {
           projects={this.state.projects} 
           palettes={this.state.palettes}
           deleteProject={this.removeProject}
-          deletePalette={this.deletePalette}
+          deletePalette={this.removePalette}
           getAllProjects={this.getAllProjects}
         />
       </div>
