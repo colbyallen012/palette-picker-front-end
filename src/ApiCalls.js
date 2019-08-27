@@ -13,7 +13,7 @@ export const fetchPalettesById = (id) => {
     .then(data => data)
     .catch(error => error.message)
 }
-
+//Colby
 export const fetchAllPalettes = () => {
   return fetch(`http://localhost:3001/api/v1/palettes`)
     .then(res => res.json())
