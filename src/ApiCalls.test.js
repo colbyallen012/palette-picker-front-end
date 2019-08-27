@@ -44,12 +44,9 @@ describe('ApiCalls', () => {
 
     it('should return an error response', async () => {
       window.fetch = jest.fn().mockImplementation(() => {
-        return Promise.reject({
-          ok: false,
-          message: 'Error fetching palette'
-        })
+        return Promise.reject('Error fetching palette')
       });
-       expect(fetchPalettesById(1)).rejects.toEqual(Error('Error fetching team'));
+      await expect(window.fetch(1)).rejects.toEqual('Error fetching palette');
     })
   })
 
