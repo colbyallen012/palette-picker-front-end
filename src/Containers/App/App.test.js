@@ -53,4 +53,11 @@ describe('App', () => {
     expect( constants.deletePalette).toHaveBeenCalledTimes(1)
   })
 
+  it('removePalette should set palette state', () => {
+    wrapper.setState({palettes: [{id: 1, name: 'The barn'}]})
+    expect(wrapper.state('palettes')).toEqual([{id: 1, name: 'The barn'}])
+    instance.removePalette(1)
+    expect(wrapper.state('palettes')).toEqual([])
+  })
+
 })
