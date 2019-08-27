@@ -2,7 +2,10 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import App from './App';
-import {fetchAllProjects} from '../../ApiCalls'
+import {fetchAllProjects} from '../../ApiCalls';
+import * as constants from '../../ApiCalls';
+
+
 describe('App', () => {
   let wrapper, instance;
 
@@ -15,12 +18,11 @@ describe('App', () => {
     expect(wrapper).toMatchSnapshot()
   })
 
-  xit('getAllProjects should call fetchAllProjects', async () => {
-    const spy = jest.spyOn(fetchAllProjects())
-    instance.fetchAllProjects = jest.fn()
-    expect(spy).toHaveBeenCalledTimes(0)
+  it('getAllProjects should call fetchAllProjects', async () => {
+    constants.fetchAllProjects = jest.fn(() => Promise.resolve([]))
+    expect(constants.fetchAllProjects).toHaveBeenCalledTimes(0)
     await instance.getAllProjects()
-    expect( spy).toHaveBeenCalledTimes(1)
+    expect( constants.fetchAllProjects).toHaveBeenCalledTimes(1)
   })
 
 })
