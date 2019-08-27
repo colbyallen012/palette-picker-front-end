@@ -6,7 +6,7 @@ describe('Generator', () => {
   let wrapper, instance;
   const event = {
     preventDefault: jest.fn(),
-    target: [ 'null', {value: 'Batmobile'}]
+    target: [ 'stuff', {value: 'Batmobile'}]
   }
   const originalColor = {color:'#000000', isLocked: false}
   const newColor = {color:'#FFFFF', isLocked: false}
@@ -90,6 +90,13 @@ describe('Generator', () => {
     wrapper.setState({selectedProject: 'The Bat Cave'})
     instance.handleSubmitPalette(event)
      expect(instance.postPalette).toHaveBeenCalledWith(newPalette)
+  })
+
+  it('handleSelectProject should set state', () => {
+    expect(wrapper.state('selectedProject')).toEqual('')
+    const event = {target: {value: 'stuff'}}
+    instance.handleSelectProject(event)
+    expect(wrapper.state('selectedProject')).toEqual('stuff')
   })
 
 })
