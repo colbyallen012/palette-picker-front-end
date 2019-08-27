@@ -55,7 +55,9 @@ export class App extends Component {
   render () {
     return (
       <div className='App'>
-        <h1>Palette Picker</h1>
+        <header>
+          <h1>Palette Picker</h1>
+        </header>
         <Generator 
           projects={this.state.projects}
           getAllPalettes={this.getAllPalettes}
