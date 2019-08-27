@@ -90,7 +90,6 @@ describe('ApiCalls', () => {
       });
       await expect(window.fetch()).rejects.toEqual('Error fetching palettes');;
     })
-
   })
 
   describe('Post palettes', () => {
@@ -98,7 +97,30 @@ describe('ApiCalls', () => {
   })
 
   describe('Post projects', () => {
-    
+    let mockProject;
+
+    beforeEach(() => {
+      mockProject = mockProject = { name: 'Fake Project'}
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockProject)
+        });
+      });
+    });
+
+    it('should post a new project given the correct url', () => {
+      const url = 'http://localhost:3001/api/v1/projects'
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(mockProject),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
+      postProject(mockProject);
+      expect(window.fetch).toHaveBeenCalledWith(url, options);
+    });
   })
 
   describe('Patch projects', () => {
