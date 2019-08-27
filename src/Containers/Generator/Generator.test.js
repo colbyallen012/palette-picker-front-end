@@ -4,7 +4,10 @@ import Generator from './Generator';
 
 describe('Generator', () => {
   let wrapper, instance;
-  const event = {preventDefault: jest.fn()}
+  const event = {
+    preventDefault: jest.fn(),
+    target: [ 'null', {value: 'Batmobile'}]
+  }
   const originalColor = {color:'#000000', isLocked: false}
   const newColor = {color:'#FFFFF', isLocked: false}
   const projects = [{name: 'Bat Cave'}]
@@ -65,9 +68,28 @@ describe('Generator', () => {
   })
 
   it('handleSubmitPalette should preventDefault', () => {
+    instance.postPalette = jest.fn()
     expect(event.preventDefault).toHaveBeenCalledTimes(0)
     instance.handleSubmitPalette(event)
     expect(event.preventDefault).toHaveBeenCalledTimes(1)
+  })
+
+  xit('handleSubmitPalette should call postPalette with a palette', async () => {
+    instance.postPalette = jest.fn()
+    instance.getAllPalettes = jest.fn()
+    instance.document = jest.fn()
+    const newPalette = {
+      name: 'Batmobile',
+      project_name: 'The Bat Cave',
+      color_1: '#000000',
+      color_2: '#000000',
+      color_3: '#000000',
+      color_4: '#000000',
+      color_5: '#000000'
+    }
+    wrapper.setState({selectedProject: 'The Bat Cave'})
+    instance.handleSubmitPalette(event)
+     expect(instance.postPalette).toHaveBeenCalledWith(newPalette)
   })
 
 })
