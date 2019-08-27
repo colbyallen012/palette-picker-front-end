@@ -9,11 +9,11 @@ export class Generator extends Component {
     super ();
     this.state = {
       randomColors: [
-      {color:'#000000', isLocked: false},
-      {color:'#000000', isLocked: false},
-      {color:'#000000', isLocked: false},
-      {color:'#000000', isLocked: false},
-      {color:'#000000', isLocked: false}
+      {color:'#b2ffb7', isLocked: false},
+      {color:'#3904e5', isLocked: false},
+      {color:'#faadff', isLocked: false},
+      {color:'#ad38d1', isLocked: false},
+      {color:'#f7ef13', isLocked: false}
       ],
       selectedProject: ''
     }
