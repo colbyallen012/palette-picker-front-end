@@ -25,11 +25,18 @@ describe('App', () => {
     expect( constants.fetchAllProjects).toHaveBeenCalledTimes(1)
   })
 
-  it('getAllProjects should call fetchAllProjects', async () => {
+  it('getAllPalettes should call fetchAllPalettes', async () => {
     constants.fetchAllPalettes = jest.fn(() => Promise.resolve([]))
     expect(constants.fetchAllPalettes).toHaveBeenCalledTimes(0)
     await instance.getAllPalettes()
     expect( constants.fetchAllPalettes).toHaveBeenCalledTimes(1)
+  })
+
+  it('removeProject should call deleteProject', () => {
+    constants.deleteProject = jest.fn(() => Promise.resolve([]))
+    expect(constants.deleteProject).toHaveBeenCalledTimes(0)
+    instance.removeProject()
+    expect( constants.deleteProject).toHaveBeenCalledTimes(1)
   })
 
 })
