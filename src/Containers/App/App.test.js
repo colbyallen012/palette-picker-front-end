@@ -39,4 +39,11 @@ describe('App', () => {
     expect( constants.deleteProject).toHaveBeenCalledTimes(1)
   })
 
+  it('removeProject should set projects state', () => {
+    wrapper.setState({projects: [{id: 1, name: 'The barn'}]})
+    expect(wrapper.state('projects')).toEqual([{id: 1, name: 'The barn'}])
+    instance.removeProject(1)
+    expect(wrapper.state('projects')).toEqual([])
+  })
+
 })
