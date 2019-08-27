@@ -83,6 +83,13 @@ describe('ApiCalls', () => {
       const result = await fetchAllPalettes();
       expect(result).toEqual(mockPalette)
     })
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject('Error fetching palettes')
+      });
+      await expect(window.fetch()).rejects.toEqual('Error fetching palettes');;
+    })
   })
 
   describe('Post palettes', () => {
@@ -90,7 +97,46 @@ describe('ApiCalls', () => {
   })
 
   describe('Post projects', () => {
-    
+    let mockProject;
+    let mockResponse;
+
+    beforeEach(() => {
+      mockResponse = {
+        data: { name: 'Fake Project' }
+      };
+      mockProject = mockProject = { name: 'Fake Project'}
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockProject)
+        });
+      });
+    });
+
+    it('should post a new project given the correct url', () => {
+      const url = 'http://localhost:3001/api/v1/projects'
+      const options = {
+        method: 'POST',
+        body: JSON.stringify(mockProject),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
+      postProject(mockProject);
+      expect(window.fetch).toHaveBeenCalledWith(url, options);
+    });
+
+    it('should return a project if response is ok', async () => {  
+      await expect(postProject(mockProject)).resolves.toEqual(mockResponse.data);
+    });
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject('Error adding project')
+      });
+      await expect(window.fetch()).rejects.toEqual('Error adding project');;
+    })
+
   })
 
   describe('Patch projects', () => {
