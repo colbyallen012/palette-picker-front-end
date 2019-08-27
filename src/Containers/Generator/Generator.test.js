@@ -48,5 +48,13 @@ describe('Generator', () => {
     expect(wrapper.state('randomColors').length).toEqual(0)
   })
 
+  it('clearRandomColor should call getRandomColor', () => {
+    instance.getRandomColor = jest.fn()
+    expect(instance.getRandomColor).toHaveBeenCalledTimes(0)
+    instance.clearRandomColor()
+    expect(instance.getRandomColor).toHaveBeenCalledTimes(1)
+
+  })
+
 
 })
