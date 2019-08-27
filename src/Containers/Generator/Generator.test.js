@@ -2,6 +2,8 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import Generator from './Generator';
 
+//Generator.jsx  | 93.94 | 100 | 100 | 93.94 |  62,63 
+
 describe('Generator', () => {
   let wrapper, instance;
   const event = {
