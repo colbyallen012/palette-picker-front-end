@@ -4,9 +4,11 @@ exports[`App should match snapshot 1`] = `
 <div
   className="App"
 >
-  <h1>
-    Palette Picker
-  </h1>
+  <header>
+    <h1>
+      Palette Picker
+    </h1>
+  </header>
   <Generator
     getAllPalettes={[Function]}
     projects={Array []}

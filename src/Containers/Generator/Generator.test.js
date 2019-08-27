@@ -10,7 +10,7 @@ describe('Generator', () => {
     preventDefault: jest.fn(),
     target: [ 'stuff', {value: 'Batmobile'}]
   }
-  const originalColor = {color:'#000000', isLocked: false}
+  const originalColor = {color:'#b2ffb7', isLocked: false}
   const newColor = {color:'#FFFFF', isLocked: false}
   const projects = [{name: 'Bat Cave'}]
   const palettes = [{
@@ -42,7 +42,7 @@ describe('Generator', () => {
 
   it('getRandomColor should not change color state', () => {
     expect(wrapper.state('randomColors')[0]).toEqual(originalColor)
-    wrapper.setState({randomColors: [{color:'#000000', isLocked: true}]})
+    wrapper.setState({randomColors: [{color:'#b2ffb7', isLocked: true}]})
     instance.getRandomColor()
     expect(wrapper.state('randomColors')[0].color).toEqual(originalColor.color)
   })
