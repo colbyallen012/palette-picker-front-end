@@ -25,4 +25,11 @@ describe('App', () => {
     expect( constants.fetchAllProjects).toHaveBeenCalledTimes(1)
   })
 
+  it('getAllProjects should call fetchAllProjects', async () => {
+    constants.fetchAllPalettes = jest.fn(() => Promise.resolve([]))
+    expect(constants.fetchAllPalettes).toHaveBeenCalledTimes(0)
+    await instance.getAllPalettes()
+    expect( constants.fetchAllPalettes).toHaveBeenCalledTimes(1)
+  })
+
 })
