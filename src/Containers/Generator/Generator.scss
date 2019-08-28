@@ -1,8 +1,5 @@
 
 .generator {
-  // display: flex;
-  // flex-wrap: wrap;
-  // justify-content: center;
   .color-container {
     min-width: 100vw;
     display: flex;
@@ -17,6 +14,16 @@
     font-weight: bold;
     margin: 20px;
     width: 300px;
+  }
+  form {
+    margin: 10px;
+    select,
+    input {
+      height: 30px;
+      border-radius: 5px;
+      border: none;
+      margin: 5px;
+    }
   }
   
 }
