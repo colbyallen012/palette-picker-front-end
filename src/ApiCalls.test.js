@@ -402,6 +402,13 @@ describe('ApiCalls', () => {
       deletePalette(paletteId);
       expect(window.fetch).toHaveBeenCalledWith(url, option);
     });
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject('Error deleting palette')
+      });
+      await expect(window.fetch()).rejects.toEqual('Error deleting palette');;
+    })
   })
 
 })
