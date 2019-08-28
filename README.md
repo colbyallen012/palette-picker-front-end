@@ -12,6 +12,18 @@ This was a two week paired project at Turing School of Software & Design, where 
 
 [Colby Allen](https://github.com/colbyallen012)
 
+## Learninbg Goals
+
+The primary learning goals for this project are:
+
+-server-side testing
+-further understanding of complete CRUD endpoints
+-connecting BE & FE repositories using CORS
+-multiple environments:
+-testing
+-making use of automatic continuous integration with TravisCI
+-deployment with Heroku
+
 ## Screenshots
 
 <img width="1011" alt="Screen Shot 2019-08-28 at 1 48 29 PM" src="https://user-images.githubusercontent.com/43159025/63887722-9dbbfc00-c99a-11e9-828c-3a003014a6b7.png">
@@ -27,5 +39,7 @@ React
 Redux
 
 Sass
+
+Testing with Jest, and Supertest
 
 
