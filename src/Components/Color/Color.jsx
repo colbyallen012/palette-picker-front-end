@@ -24,7 +24,7 @@ class Color extends Component {
       <div className='Color' style={paletteStyle}>
           {!this.props.isLocked && <input type='image' alt='unlock' src={unlock} className='unlock' onClick={() => this.props.toggleLock(this.props.id)}></input>}
           {this.props.isLocked && <input type='image' alt='lock' src={lock} className='lock' onClick={() => this.props.toggleLock(this.props.id)}></input>}
-          <h3 clasName='hex'>Hex Code:{this.props.hexCode}</h3>
+          <h3 className='hex'>Hex Code:{this.props.hexCode}</h3>
       </div>
     )
   }
