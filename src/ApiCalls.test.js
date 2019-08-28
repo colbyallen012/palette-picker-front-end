@@ -331,11 +331,37 @@ describe('ApiCalls', () => {
       });
       await expect(window.fetch()).rejects.toEqual('Error editing palette');;
     })
-    
   })
 
   describe('Delete project', () => {
-    
+    let mockProject;
+
+    beforeEach(() => {
+      mockProject = {
+        id: 1,
+        name: 'Fake Project'
+      };
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+        });
+      });
+    })
+
+    it('should delete from api when passed the correct url', () => {
+      const projectId = 1
+      const url = `http://localhost:3001/api/v1/projects/${projectId}`
+      const option = {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
+
+      deleteProject(projectId);
+
+      expect(window.fetch).toHaveBeenCalledWith(url, option);
+    });
   })
 
   describe('Delete palette', () => {
