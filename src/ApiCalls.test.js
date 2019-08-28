@@ -228,7 +228,34 @@ describe('ApiCalls', () => {
   })
 
   describe('Patch projects', () => {
-    
+    let mockProject;
+    let mockResponse;
+
+    beforeEach(() => {
+      mockResponse = {
+        data: {name: 'Fake Project'}
+      };
+      mockProject = mockProject = { id: 1, name: 'Fake Project'}
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockProject)
+        });
+      });
+    });
+
+    it('should edit a project given the correct url', () => {
+      const url = `http://localhost:3001/api/v1/projects/${mockProject}`
+      const options = {
+        method: 'PATCH',
+        body: JSON.stringify(mockProject),
+        headers: {
+          'Content-Type': 'application/json'
+        }
+      };
+      patchProject(mockProject);
+      expect(window.fetch).toHaveBeenCalledWith(url, options);
+    });
   })
 
   describe('Patch palette', () => {
