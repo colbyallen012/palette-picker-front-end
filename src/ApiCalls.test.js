@@ -324,6 +324,13 @@ describe('ApiCalls', () => {
       const result = await patchPalette(id);
       expect(result).toEqual(mockPalette)
     })
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject('Error editing palette')
+      });
+      await expect(window.fetch()).rejects.toEqual('Error editing palette');;
+    })
     
   })
 
