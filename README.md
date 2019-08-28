@@ -3,6 +3,7 @@
 This was a two week paired project at Turing School of Software & Design, where we built our own backend using Express.js, Knex, and PostgreSQL. The backend allows a user to create project folders and then create palettes to add to individual projects. The user can generate a random color palette to add, or lock specific colors and build their own palette. The user can delete projects and palettes from the database.
 
 [Front End](https://the-palette-picker-fe.herokuapp.com)
+
 [Back End](https://the-palette-picker.herokuapp.com/)
 
 ## Created By
