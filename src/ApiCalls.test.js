@@ -2,9 +2,31 @@ import React from 'react';
 import {fetchAllProjects, fetchPalettesById, fetchAllPalettes, postPalette, postProject, patchProject, patchPalette, deleteProject, deletePalette} from './ApiCalls'
 
 describe('ApiCalls', () => {
-  describe('Get projects', () => {
+
+  describe('Get Projects', () => {
+    let mockProject;
+
+    beforeEach(() => {
+      mockProject = {
+        name: 'Fake Project'
+      }
+
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.resolve({
+          ok: true,
+          json: () => Promise.resolve(mockPalette)
+        })
+      })
+    })
+
+    it('should be called with the correct url', async () => {
+      const expected ='http://localhost:3001/api/v1/projects';
+      fetchAllProjects();
+      expect(window.fetch).toHaveBeenCalledWith(expected)
+    })
 
   })
+
   
   describe('Get palettes by id', () => {
     let mockPalette;
@@ -136,7 +158,6 @@ describe('ApiCalls', () => {
       });
       await expect(window.fetch()).rejects.toEqual('Error adding project');;
     })
-
   })
 
   describe('Patch projects', () => {
@@ -154,4 +175,5 @@ describe('ApiCalls', () => {
   describe('Delete palette', () => {
     
   })
+
 })
