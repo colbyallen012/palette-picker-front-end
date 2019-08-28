@@ -12,11 +12,11 @@ This was a two week paired project at Turing School of Software & Design, where 
 
 ## Screenshots
 
-[screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_58.pdf](https://github.com/Nathan-Froeh/pallet-picker-database/files/3552607/screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_58.pdf)
+<img width="1011" alt="Screen Shot 2019-08-28 at 1 48 29 PM" src="https://user-images.githubusercontent.com/43159025/63887722-9dbbfc00-c99a-11e9-828c-3a003014a6b7.png">
 
-[screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_48.pdf](https://github.com/Nathan-Froeh/pallet-picker-database/files/3552608/screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_48.pdf)
+<img width="1009" alt="Screen Shot 2019-08-28 at 1 48 45 PM" src="https://user-images.githubusercontent.com/43159025/63887731-a6143700-c99a-11e9-90a0-83cebf576e06.png">
 
-[screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_14.pdf](https://github.com/Nathan-Froeh/pallet-picker-database/files/3552609/screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_14.pdf)
+<img width="1009" alt="Screen Shot 2019-08-28 at 1 48 56 PM" src="https://user-images.githubusercontent.com/43159025/63887744-af050880-c99a-11e9-9a0d-ccabff20fec8.png">
 
 ## Built With
 
