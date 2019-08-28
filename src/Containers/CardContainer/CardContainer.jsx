@@ -2,10 +2,11 @@ import React from 'react';
 import Color from '../../Components/Color/Color'
 
 const CardContainer = ({colors}) => {
-  const displayRandomColors = colors.map(color => {
+  const displayRandomColors = colors.map((color, key) => {
     return (
       <Color 
         hexCode={color}
+        key={key}
       />
     )
   })

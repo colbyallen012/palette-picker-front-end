@@ -20,7 +20,7 @@ exports[`Color should match snapshot 1`] = `
     type="image"
   />
   <h3
-    clasName="hex"
+    className="hex"
   >
     Hex Code:
     FFFFFF

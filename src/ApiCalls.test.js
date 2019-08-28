@@ -20,7 +20,7 @@ describe('ApiCalls', () => {
     })
 
     it('should be called with the correct url', async () => {
-      const expected ='http://localhost:3001/api/v1/projects';
+      const expected ='https://the-palette-picker.herokuapp.com/api/v1/projects';
       fetchAllProjects();
       expect(window.fetch).toHaveBeenCalledWith(expected)
     })
@@ -64,7 +64,7 @@ describe('ApiCalls', () => {
 
     it('should be called with the correct url', async () => {
       const id = 1;
-      const expected = `http://localhost:3001/api/v1/projects/${id}/palettes`;
+      const expected = `https://the-palette-picker.herokuapp.com/api/v1/projects/${id}/palettes`;
       fetchPalettesById(id);
       expect(window.fetch).toHaveBeenCalledWith(expected)
     })
@@ -107,7 +107,7 @@ describe('ApiCalls', () => {
     })
 
     it('should be called with the correct url', async () => {
-      const expected = `http://localhost:3001/api/v1/palettes`;
+      const expected = `https://the-palette-picker.herokuapp.com/api/v1/palettes`;
       fetchAllPalettes();
       expect(window.fetch).toHaveBeenCalledWith(expected)
     })
@@ -161,7 +161,7 @@ describe('ApiCalls', () => {
     });
 
     it('should post a new palette given the correct url', () => {
-      const url = 'http://localhost:3001/api/v1/palettes'
+      const url = 'https://the-palette-picker.herokuapp.com/api/v1/palettes'
       const options = {
         method: 'POST',
         body: JSON.stringify(mockPalette),
@@ -203,7 +203,7 @@ describe('ApiCalls', () => {
     });
 
     it('should post a new project given the correct url', () => {
-      const url = 'http://localhost:3001/api/v1/projects'
+      const url = 'https://the-palette-picker.herokuapp.com/api/v1/projects'
       const options = {
         method: 'POST',
         body: JSON.stringify(mockProject),
@@ -245,7 +245,7 @@ describe('ApiCalls', () => {
     });
 
     it('should edit a project given the correct url', () => {
-      const url = `http://localhost:3001/api/v1/projects/${mockProject}`
+      const url = `https://the-palette-picker.herokuapp.com/api/v1/projects/${mockProject}`
       const options = {
         method: 'PATCH',
         body: JSON.stringify(mockProject),
@@ -307,7 +307,7 @@ describe('ApiCalls', () => {
     });
 
     it('should edit a palette given the correct url', () => {
-      const url = `http://localhost:3001/api/v1/palettes/${mockPalette}`
+      const url = `https://the-palette-picker.herokuapp.com/api/v1/palettes/${mockPalette}`
       const options = {
         method: 'PATCH',
         body: JSON.stringify(mockPalette),
@@ -350,7 +350,7 @@ describe('ApiCalls', () => {
 
     it('should delete from api when passed the correct url', () => {
       const projectId = 1
-      const url = `http://localhost:3001/api/v1/projects/${projectId}`
+      const url = `https://the-palette-picker.herokuapp.com/api/v1/projects/${projectId}`
       const option = {
         method: 'DELETE',
         headers: {
@@ -392,7 +392,7 @@ describe('ApiCalls', () => {
 
     it('should delete from api when passed the correct url', () => {
       const paletteId = 1
-      const url = `http://localhost:3001/api/v1/palettes/${paletteId}`
+      const url = `https://the-palette-picker.herokuapp.com/api/v1/palettes/${paletteId}`
       const option = {
         method: 'DELETE',
         headers: {

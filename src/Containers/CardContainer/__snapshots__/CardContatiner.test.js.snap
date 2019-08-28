@@ -14,6 +14,7 @@ exports[`Card Container should match snapshot 1`] = `
         "color_5": "test",
       }
     }
+    key="0"
   />
 </section>
 `;
