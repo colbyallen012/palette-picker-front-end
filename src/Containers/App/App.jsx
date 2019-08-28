@@ -23,14 +23,12 @@ export class App extends Component {
   }
 
   getAllProjects = async () => {
-    console.log(this.state.projects)
     await fetchAllProjects()
       .then(projects => this.setState({projects: projects}))
       .catch(error => error.message)
   }
 
   getAllPalettes = async () => {
-    console.log(this.state.palettes)
     await fetchAllPalettes(this.state.project_id)
       .then(palettes => this.setState({palettes: palettes}))
       .catch(error => console.log(error.message))

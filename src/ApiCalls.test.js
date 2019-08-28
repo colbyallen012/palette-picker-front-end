@@ -176,6 +176,13 @@ describe('ApiCalls', () => {
     it('should return a palette if response is ok', async () => {  
       await expect(postPalette(mockPalette)).resolves.toEqual(mockResponse.data);
     });
+
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject('Error adding palette')
+      });
+      await expect(window.fetch()).rejects.toEqual('Error adding palette');;
+    })
   })
 
   describe('Post projects', () => {
