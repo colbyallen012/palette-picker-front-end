@@ -12,6 +12,12 @@ This was a two week paired project at Turing School of Software & Design, where 
 
 ## Screenshots
 
+[screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_58.pdf](https://github.com/Nathan-Froeh/pallet-picker-database/files/3552607/screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_58.pdf)
+
+[screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_48.pdf](https://github.com/Nathan-Froeh/pallet-picker-database/files/3552608/screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_48.pdf)
+
+[screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_14.pdf](https://github.com/Nathan-Froeh/pallet-picker-database/files/3552609/screencapture-the-palette-picker-fe-herokuapp-2019-08-28-13_45_14.pdf)
+
 ## Built With
 
 React
