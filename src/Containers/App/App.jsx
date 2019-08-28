@@ -31,7 +31,7 @@ export class App extends Component {
   getAllPalettes = async () => {
     await fetchAllPalettes(this.state.project_id)
       .then(palettes => this.setState({palettes: palettes}))
-      .catch(error => console.log(error.message))
+      .catch(error => error.message)
   }
 
   removeProject = (project_id) => {
