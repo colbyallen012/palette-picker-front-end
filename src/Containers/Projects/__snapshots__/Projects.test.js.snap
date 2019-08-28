@@ -21,6 +21,23 @@ exports[`Projects should match snapshot 1`] = `
   </form>
   <section
     className="project-container"
-  />
+  >
+    <Project
+      deletePalette={[MockFunction]}
+      deleteProject={[MockFunction]}
+      id={1}
+      key="0"
+      name="project"
+      palettes={
+        Array [
+          Object {
+            "id": 2,
+            "name": "palette",
+            "project_id": 1,
+          },
+        ]
+      }
+    />
+  </section>
 </div>
 `;

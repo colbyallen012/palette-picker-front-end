@@ -8,8 +8,8 @@ describe('Projects', () => {
     preventDefault: jest.fn()
   }
   const props = {
-    projects: [],
-    palettes: [],
+    projects: [{name: 'project', id: 1}],
+    palettes: [{name: 'palette', id: 2, project_id: 1}],
     deleteProject: jest.fn(),
     deletePalette: jest.fn(),
     getAllProjects: jest.fn()
