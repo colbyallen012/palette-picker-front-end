@@ -30,6 +30,13 @@ describe('ApiCalls', () => {
       expect(result).toEqual(mockProject)
     })
 
+    it('should return an error response', async () => {
+      window.fetch = jest.fn().mockImplementation(() => {
+        return Promise.reject('Error fetching projects')
+      });
+      await expect(window.fetch()).rejects.toEqual('Error fetching projects');;
+    })
+
   })
 
   
