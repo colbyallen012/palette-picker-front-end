@@ -256,6 +256,12 @@ describe('ApiCalls', () => {
       patchProject(mockProject);
       expect(window.fetch).toHaveBeenCalledWith(url, options);
     });
+
+    it('should return a string with the project that was updated', async () => {
+      const id = 1;
+      const result = await patchProject(id);
+      expect(result).toEqual(mockProject)
+    })
   })
 
   describe('Patch palette', () => {
