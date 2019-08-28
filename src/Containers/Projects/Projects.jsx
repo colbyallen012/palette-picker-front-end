@@ -40,11 +40,10 @@ export class Projects extends Component {
     return (
       <div className='Projects'>
         <form 
-        id="new_project" 
-        onSubmit={this.handleSubmitProject} 
-        ref={form => this.form = form}
-      >
-          
+          id="new_project" 
+          onSubmit={this.handleSubmitProject} 
+          ref={form => this.form = form}
+        >
           <input 
             type="text" 
             placeholder="New project name" 
