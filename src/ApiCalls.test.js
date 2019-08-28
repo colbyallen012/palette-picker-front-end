@@ -14,7 +14,7 @@ describe('ApiCalls', () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
           ok: true,
-          json: () => Promise.resolve(mockPalette)
+          json: () => Promise.resolve(mockProject)
         })
       })
     })
@@ -23,6 +23,11 @@ describe('ApiCalls', () => {
       const expected ='http://localhost:3001/api/v1/projects';
       fetchAllProjects();
       expect(window.fetch).toHaveBeenCalledWith(expected)
+    })
+
+    it('should return a parsed response', async () => {
+      const result = await fetchAllProjects();
+      expect(result).toEqual(mockProject)
     })
 
   })
