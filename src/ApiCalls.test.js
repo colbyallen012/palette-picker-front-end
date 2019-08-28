@@ -318,6 +318,12 @@ describe('ApiCalls', () => {
       patchPalette(mockPalette);
       expect(window.fetch).toHaveBeenCalledWith(url, options);
     });
+
+    it('should return a string with the palette that was updated', async () => {
+      const id = 1;
+      const result = await patchPalette(id);
+      expect(result).toEqual(mockPalette)
+    })
     
   })
 
