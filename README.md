@@ -12,7 +12,7 @@ This was a two week paired project at Turing School of Software & Design, where 
 
 [Colby Allen](https://github.com/colbyallen012)
 
-## Learninbg Goals
+## Learning Goals
 
 The primary learning goals for this project are:
 
