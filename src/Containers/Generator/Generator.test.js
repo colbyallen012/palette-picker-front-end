@@ -1,6 +1,7 @@
 import React from 'react';
 import {shallow} from 'enzyme';
 import Generator from './Generator';
+import * as constants from '../../ApiCalls';
 
 //Generator.jsx  | 93.94 | 100 | 100 | 93.94 |  62,63 
 
@@ -76,22 +77,24 @@ describe('Generator', () => {
     expect(event.preventDefault).toHaveBeenCalledTimes(1)
   })
 
-  xit('handleSubmitPalette should call postPalette with a palette', async () => {
-    instance.postPalette = jest.fn()
+  it('handleSubmitPalette should call postPalette with a palette', async () => {
     instance.getAllPalettes = jest.fn()
     instance.document = jest.fn()
+    constants.postPalette = jest.fn()
+    instance.form = {reset: jest.fn()}
     const newPalette = {
       name: 'Batmobile',
       project_name: 'The Bat Cave',
-      color_1: '#000000',
-      color_2: '#000000',
-      color_3: '#000000',
-      color_4: '#000000',
-      color_5: '#000000'
+      color_1: '#b2ffb7',
+      color_2: '#3904e5',
+      color_3: '#faadff',
+      color_4: '#ad38d1',
+      color_5: '#f7ef13'
     }
     wrapper.setState({selectedProject: 'The Bat Cave'})
-    instance.handleSubmitPalette(event)
-     expect(instance.postPalette).toHaveBeenCalledWith(newPalette)
+    expect(constants.postPalette).toHaveBeenCalledTimes(0)
+     instance.handleSubmitPalette(event)
+     await expect(constants.postPalette).toHaveBeenCalledWith(newPalette)
   })
 
   it('handleSelectProject should set state', () => {
