@@ -17,11 +17,17 @@ This was a two week paired project at Turing School of Software & Design, where 
 The primary learning goals for this project are:
 
 -server-side testing
+
 -further understanding of complete CRUD endpoints
+
 -connecting BE & FE repositories using CORS
--multiple environments:
+
+multiple environments:
+
 -testing
+
 -making use of automatic continuous integration with TravisCI
+
 -deployment with Heroku
 
 ## Screenshots
