@@ -155,7 +155,7 @@ describe('ApiCalls', () => {
       window.fetch = jest.fn().mockImplementation(() => {
         return Promise.resolve({
           ok: true,
-          json: () => Promise.resolve(mockProject)
+          json: () => Promise.resolve(mockPalette)
         });
       });
     });
@@ -171,6 +171,10 @@ describe('ApiCalls', () => {
       };
       postPalette(mockPalette);
       expect(window.fetch).toHaveBeenCalledWith(url, options);
+    });
+
+    it('should return a palette if response is ok', async () => {  
+      await expect(postPalette(mockPalette)).resolves.toEqual(mockResponse.data);
     });
   })
 
