@@ -87,10 +87,11 @@ export class Generator extends Component {
         <section className='color-container'>
           {displayColors}
         </section>
+        <section className='input'>
         <button onClick={this.clearRandomColor} className="gen-palette">
           Generate New Palette
         </button>
-        <form 
+        <form
           id="save-palette" 
           onSubmit={this.handleSubmitPalette}
           ref={form => this.form = form}
@@ -99,9 +100,10 @@ export class Generator extends Component {
           <option value="">--Choose a project--</option>
             {projectList}
           </select>
-          <input type="text" placeholder="New palette name"/>
-          <input type="submit" value="Save palette"/>
+          <input className='new-name' type="text" placeholder="New palette name"/>
+          <button className='save'>Save Palette</button>
         </form>
+        </section>
       </div>
     )
   }

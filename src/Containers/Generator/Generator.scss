@@ -1,33 +1,60 @@
 
 .generator {
   .color-container {
-    min-width: 100vw;
+    min-width: 75vw;
     display: flex;
     overflow-x: auto;
   }
   .gen-palette {
     height: 50px;
-    background: #21d159;
-    border-radius: 50px;
-    border: none;
+    background: #fff;
+    background-color: #10acf3;
+    border: 2px solid #fff;
+    border-radius: 5px;
+    color: #fff;
     font-size: 20px;
     font-weight: bold;
-    margin: 20px;
-    width: 300px;
+    width: 288px;
+    margin: 10px 0px 0px 0px;
   }
-  form {
-    select,
-    input {
-      height: 30px;
-      border-radius: 5px;
-      border: none;
-      margin: 5px;
-    }
-  }
-  
 }
+.new-name, select {
+  font-size: 15px;
+  font-weight: bold;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  margin: 0px 10px;
+  padding: 0px;
+  width: 180px;
+  text-align: center;
+}
+
+
 
 .lock {
   margin: 5px auto;
   width: 50%;
+}
+
+.input {
+  display: flex;
+  flex-direction: row;
+}
+
+.save {
+  background: #fff;
+  border: 2px solid #fff;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  height: 50px;
+  width: 288px;
+  margin: 10px 0px 0px 234px;
+  background-color: #10acf3;
+  color: #fff;
+}
+
+#save-palette {
+  margin: 0px 0px 0px 230px;
 }

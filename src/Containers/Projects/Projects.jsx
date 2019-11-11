@@ -50,7 +50,7 @@ export class Projects extends Component {
             onChange={this.handleProjectName}
             required
           />
-          <input type="submit" value="Save project"/>
+          <button className='save-proj'>Save Project</button>
         </form>
         <section className="project-container">
           {addProjects}

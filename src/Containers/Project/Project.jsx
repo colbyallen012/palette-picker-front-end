@@ -34,8 +34,8 @@ export class Project extends Component {
     return (
       <div className="project">
         <h3>{this.state.project_name}</h3>
-        <button onClick={this.handleDelete}>Delete Project</button>
         {addPalettes}
+        <button onClick={this.handleDelete}>Delete Project</button>
       </div>
     )
   }
