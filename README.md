@@ -32,11 +32,17 @@ multiple environments:
 
 ## Screenshots
 
-<img width="1011" alt="Screen Shot 2019-08-28 at 1 48 29 PM" src="https://user-images.githubusercontent.com/43159025/63887722-9dbbfc00-c99a-11e9-828c-3a003014a6b7.png">
+Home
 
-<img width="1009" alt="Screen Shot 2019-08-28 at 1 48 45 PM" src="https://user-images.githubusercontent.com/43159025/63887731-a6143700-c99a-11e9-90a0-83cebf576e06.png">
+<img width="1435" alt="Screen Shot 2019-11-11 at 12 16 01 PM" src="https://user-images.githubusercontent.com/43159025/68613983-2f58e700-047d-11ea-9a69-eb73fb59ba5a.png">
 
-<img width="1009" alt="Screen Shot 2019-08-28 at 1 48 56 PM" src="https://user-images.githubusercontent.com/43159025/63887744-af050880-c99a-11e9-9a0d-ccabff20fec8.png">
+Add New Project 
+
+<img width="1439" alt="Screen Shot 2019-11-11 at 12 16 14 PM" src="https://user-images.githubusercontent.com/43159025/68614017-48619800-047d-11ea-8dbb-dec55cab72cd.png">
+
+Edit Existing Project
+
+<img width="1423" alt="Screen Shot 2019-11-11 at 12 16 48 PM" src="https://user-images.githubusercontent.com/43159025/68614042-58797780-047d-11ea-8e87-2a428c9d675f.png">
 
 ## Built With
 
